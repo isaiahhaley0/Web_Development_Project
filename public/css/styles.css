@@ -169,6 +169,9 @@ ul {
   #closebutton{
     background-color: lightcoral;
   }
+  #openbutton{
+    background-color: lightcoral;
+  }
   /* Change the link color on hover */
   li a:hover {
     background-color: black;
@@ -220,7 +223,7 @@ ul {
     padding: 8px;
     height: auto;
 }
-.navbar{
+.navitem{
     position: relative;
     float:left  ;
     max-width: auto;
@@ -242,6 +245,7 @@ ul {
 }
 
 .header{
+    float: left;
     height: 74px;
     font-size: 74px;
     font-family: sans-serif;

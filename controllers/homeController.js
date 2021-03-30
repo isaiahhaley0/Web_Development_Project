@@ -1,5 +1,5 @@
 
 
 exports.showIndex = (req,res) =>{
-    res.render("home")
+    res.render("index")
 }

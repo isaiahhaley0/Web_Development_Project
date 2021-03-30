@@ -21,22 +21,22 @@
 
 <body>
     <header>
-        <div class="content">
+        <div class="content d-flex flex-row">
             <img src="logos/vibez_logo.png" class="logo" width="71" height="73" alt="logo">
             <h1 class="header">Vibez</h1>
-            <div><button class="openbtn hidden" id="openbutton" onclick="openbar('sidebar')">open</button></div>
-   
-        
+            <button class="openbtn hidden" id="openbutton" onclick="openbar('sidebar')">open</button> 
+            
+            <div class="navitem" id = "navmenu">
+                <a href="sign_in.html">Login</a> 
+                <a  href="sign_up.html">Sign Up</a>
+                <a href="myprofile.html">My Profile</a> 
+                <a href="messages.html">messages</a> 
+                    <a href="search.html">search</a> 
+                     
+            </div>
+            <button id="closebutton" class = "clsebtn" onclick="closebar('sidebar')">close</button>
     </header>
-	<div class="navbar" id = "sidebar">
-		<a href="sign_in.html">Login</a> 
-        <a href="myprofile.html">My Profile</a> 
-        <a href="messages.html">messages</a> 
-            <a href="search.html">search</a> 
-            <div>
-        <button id="closebutton" class = " closebtn" onclick="closebar('sidebar')">close</button> 
-        </div>
-	</div>
+	
 
 	<div class="container">
 		<%- body %>
