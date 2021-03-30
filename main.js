@@ -25,8 +25,8 @@ app.use(
 );
 app.use(express.json());
 
-
- 
+app.use(errorController.pageNotFoundError);
+app.use(errorController.internalServerError);
 
   
 
