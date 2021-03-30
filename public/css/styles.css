@@ -1,0 +1,281 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    background-color: black;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+
+
+
+  .hdiv{
+    
+ 
+    transition: all 2s;
+    
+}
+
+
+.right{
+  float: right;
+}
+.left{
+  float: left;
+}
+.hdiv:hover{
+    width: 150%;
+    height: 100px;
+}
+
+textarea {
+  resize: both;
+  overflow: auto;
+}
+
+.betterlink{
+  z-index: 100;
+  margin: 0%;
+    padding: 0%;
+    width: auto;
+    border:transparent;
+    background-color: black;
+    color:white;
+    overflow: hidden;
+white-space: nowrap;
+}
+
+
+
+
+
+
+
+ul.reccomendedusr{
+    list-style-type: circle;
+    border-color: gold;
+    font-family: fantasy;
+    padding: auto;
+}
+li.usr{
+ 
+    text-align: center;
+   
+    margin: auto;
+    border-radius: 10px;
+    border: 2px solid gold;
+    width: 100%;
+    float: right;
+    overflow: hidden;
+white-space: nowrap;
+}
+.form input {
+    padding: 20px;
+    width: 500px;
+    margin-top: 10px;
+    border: none;
+    border-bottom: 1px solid rgb(29 161 242);
+    outline-style: none;
+    padding-bottom: 10px;
+  
+  }
+li.topic{
+  text-align: center;
+     
+    margin: auto;
+    border-radius: 10px;
+    border: 2px solid purple;
+    width: 100%;
+    float: right;
+    overflow: hidden;
+white-space: nowrap;
+}
+  a.buttonlink:link, a.buttonlink:visited {
+    background-color: lightcoral;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  a.buttonlink:hover, a.buttonlink:active {
+    background-color: lightcoral;
+  }
+#explore{
+    position: relative;
+    float:right  ;
+    max-width: 25%;
+    min-width: auto;
+    padding: 5px;
+    font-size: 18px;
+    z-index: 25;
+    border: 2px solid white;
+    border-radius: 5px;
+
+}
+
+.trendbox{
+     padding: 5px;
+     margin: 5px;
+     border: 2px solid blue;
+     position: relative;
+    float:right  ;
+    border-radius: 5px;
+    padding-right: 2%;
+    width: 85%;
+}
+#newpost{
+    text-align: center;
+    width: 45%;
+ 
+    margin-left: 22.5%;
+    position: relative;
+ 
+    padding: 10px;
+    border: 2px solid lightblue;
+    border-radius: 30px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+ 
+    background-color: white;
+  }
+  #postbutton{
+    background-color: lightblue;
+    color:black;
+    border-radius: 25%;
+  }
+  .intitle{
+    border:0px;
+    border-bottom: 1px solid blue;
+  }
+  li a {
+    display: block;
+    color: black;
+    background-color: lightcoral;
+    border: 2px solid black;
+    border-radius: 30px;
+    padding: 8px 16px;
+    text-decoration: none;
+    text-align: center;
+  }
+  li button{
+    display: block;
+    border-radius: 30px;
+  }
+  #closebutton{
+    background-color: lightcoral;
+  }
+  /* Change the link color on hover */
+  li a:hover {
+    background-color: black;
+    color: white;
+    z-index: 289;
+  }
+  #titlebox{
+    font-size: large;
+  }
+#postbody{
+  border-bottom: 1px solid #75d24b;
+  border-radius: 5%;
+}
+#feed{
+    width: auto;
+    right: 10px;
+    padding: 10px;
+    background-color: lightblue;
+}
+.post{
+    border-radius: 5px;
+    border:2px solid lightcoral;
+    padding: 5px;
+    text-align: center;
+    width: 45%;
+    margin-left: 22.5%;
+    position: relative;
+}
+
+.profile_pic{
+    width: 35px;
+    height: 35px;
+    float: left;
+}
+
+.post_title{
+    font-size: 16px;
+    font-family: sans-serif;
+    border: 2px solid white;
+    text-align: center;
+    padding: 8px;
+    height: 40px;
+}
+.post_content{
+    font-size: 16px;
+    font-family: sans-serif;
+    border: 2px solid white;
+    text-align: center;
+    padding: 8px;
+    height: auto;
+}
+.navbar{
+    position: relative;
+    float:left  ;
+    max-width: auto;
+
+    padding: 5px;
+    font-size: 18px;
+    font-family: sans-serif;
+  
+    border-radius: 5px;
+}
+
+.navelement{
+    max-width: auto;
+    min-width: 10px;
+    padding: 5px;
+    font-size: 16px;
+    font-family: sans-serif;
+    border: 2px solid white;
+}
+
+.header{
+    height: 74px;
+    font-size: 74px;
+    font-family: sans-serif;
+}
+.logo{
+    float : left;
+}
+#footer
+{
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+}
+.rightaside {
+    float: right;
+    width: auto;
+    border: 2px solid white;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 5px;
+  }
+
+  .leftaside {
+    float: left;
+    width: auto;
+    border: 2px solid white;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 5px;
+  }
+
+ .sidebarheader{
+    border-radius: 5px;
+    background-color: black;
+    color:white;
+    padding: 5px;
+ }

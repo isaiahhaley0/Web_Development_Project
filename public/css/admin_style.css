@@ -1,0 +1,111 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    background-color: black;
+  }
+
+  .header{
+    height: 74px;
+    font-size: 74px;
+    color: white;
+    font-family: sans-serif;
+}
+
+
+.headerspacer{
+    width: 100%;
+    height: 50px;
+}
+
+li{
+    display: block;
+    color: black;
+    
+    border: 2px solid black;
+     
+    padding: 8px 16px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.logo{
+    float : left;
+}
+
+#adminqueue{
+    float: left;
+    max-width: 25%;
+    min-width: auto;
+    padding: 5px;
+    padding:  4px;
+    border: 2px solid red;
+}
+
+#statistics{
+    float: right;
+    max-width: 25%;
+    min-width: auto;
+    padding:  4px;
+    border-radius: 15px;
+    border: 2px solid purple;
+}
+footer{
+    text-align: center;
+}
+
+#thispost{
+    width: auto;
+    border: 2px solid fuchsia;
+    border-radius: 15px;
+    text-align: center;
+}
+ 
+#allposts{
+    width: auto;
+    border: 2px solid plum;
+    border-radius: 15px;
+    text-align: center;
+}
+
+#reportpic{
+    width:66px;
+    height: 85px;
+    float: left;
+    padding: 5px;
+    border-radius: 15px;
+    border: 3px solid red;
+}
+
+.queuereport{
+    background-color: red;
+    text-align: center;
+    width: auto;
+}
+
+.actionbox{
+    text-align: center;
+    border-radius: 10px;
+    min-height: 100px;
+    max-height: auto;
+    margin-left: 10%;
+    border: 2px solid white;
+    width: 70%;
+     
+}
+
+.adminbutton{
+    border-radius: 10px;
+    padding:  5px;
+}
+.footerspacer
+{
+    width: 100%;
+    height: 100px; 
+
+}
+#posttitle{
+    border: 2px solid white;
+     
+}
+
+ 
