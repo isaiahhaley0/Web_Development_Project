@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1">
+	<title>Vibez</title>
+	<link rel="stylesheet" href="/public/css/admin_style.css">
+	<link rel="stylesheet" href="/public/css/styles.css">
+    <link rel="stylesheet" href="/public/css/sidebars.css">
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+    <script src="public/js/sidebar.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="content">
+            <img src="logos/vibez_logo.png" class="logo" width="71" height="73" alt="logo">
+            <h1 class="header">Vibez</h1>
+            <div><button class="openbtn hidden" id="openbutton" onclick="openbar('sidebar')">open</button></div>
+   
+        
+    </header>
+	<div class="navbar" id = "sidebar">
+		<a href="sign_in.html">Login</a> 
+        <a href="myprofile.html">My Profile</a> 
+        <a href="messages.html">messages</a> 
+            <a href="search.html">search</a> 
+            <div>
+        <button id="closebutton" class = " closebtn" onclick="closebar('sidebar')">close</button> 
+        </div>
+	</div>
+
+	<div class="container">
+		<%- body %>
+	</div>
+
+</body>
+
+</html>
