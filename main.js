@@ -16,8 +16,8 @@ app.set("view engine", "ejs");
 app.use(layouts);
 
 
-app.get("/",homecontroller.showIndex) 
-app.use(express.static("public"))
+app.get("/",homecontroller.showIndex) ;
+app.use(express.static("public"));
 app.use(
     express.urlencoded({
         extended: false
