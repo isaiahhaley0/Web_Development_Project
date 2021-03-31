@@ -12,10 +12,11 @@ body {
 
 #login-box {
     position: center;
-    margin-top: 5% auto;
+    margin-top: 20px;
     height: 400px;
     width: 600px;
-    background: whitesmoke;
+
+    background: black;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 
 }

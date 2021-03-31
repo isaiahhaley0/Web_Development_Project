@@ -19,7 +19,7 @@ exports.getUsersPage = (req, res) => {
     res.render("signup");
 };
 
-exports.saveUser = (res, res) => {
+exports.saveUser = (req, res) => {
     let newUser = new User({
         username: req.body.username,
         email: req.body.email,

@@ -10,7 +10,8 @@
 	<link href="css/styles.css" rel="stylesheet">
     <link href="css/sidebars.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
-  
+    <link rel="stylesheet" href="/css/signup.css">
+    <link rel="stylesheet" href="css/sign_in.css">
     <script src="https://unpkg.com/vue@next"></script>
  
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -21,24 +22,25 @@
 
 <body class="bodyformat">
     <header>
-        <div class="content d-flex flex-row">
+        <div class="d-flex flex-row">
             <img src="logos/vibez_logo.png" class="logo" width="71" height="73" alt="logo">
             <h1 class="header">Vibez</h1>
             <button class="openbtn hidden" id="openbutton" onclick="openbar('sidebar')">open</button> 
             
             <div class="navitem" id = "navmenu">
-                <a href="sign_in.html">Login</a> 
-                <a  href="sign_up.html">Sign Up</a>
-                <a href="myprofile.html">My Profile</a> 
-                <a href="messages.html">messages</a> 
-                    <a href="search.html">search</a> 
+                <a href="/login" style="background-color: #ed4b4b">Login</a>
+                <a  href="/signup" style="background-color: #f2b157">Sign Up</a>
+                <a href="myprofile.html" style="background-color: #75d24b">My Profile</a>
+                <a href="messages.html" style="background-color: #4b97d8">messages</a>
+                    <a href="search.html"style="background-color: #a75fc2">search</a>
                      
             </div>
             <button id="closebutton" class = "clsebtn" onclick="closebar('sidebar')">close</button>
+        </div>
     </header>
 	
 
-	<div class="zerofloat">
+	<div class="">
 		<%- body %>
 	</div>
 

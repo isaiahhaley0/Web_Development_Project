@@ -16,3 +16,9 @@ function closebar(id) {
     document.getElementById('closebutton').classList.remove('hidden')
    
   }
+
+  function hidenavbar(){
+    document.getElementById('navmenu').classList.add('hidden');
+      document.getElementById('openbutton').classList.add('hidden');
+      document.getElementById('closebutton').classList.add('hidden');
+  }

@@ -6,15 +6,18 @@ mongoose.connection;
 const uSeed =[
     {
         username:'staff',
-        email:'staff@vibez.net'
+        email:'staff@vibez.net',
+        password:'adminpasswword'
     },
     {
         username:'bary b',
-        email:'bbenson@bmail.com'
+        email:'bbenson@bmail.com',
+        password:'password'
     },
     {
         username:'imonty',
-        email:"imnt@gmail.com"
+        email:"imnt@gmail.com",
+        password:'hunter2'
     }
 ];
 
