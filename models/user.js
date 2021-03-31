@@ -5,4 +5,3 @@ const mongoose = require("mongoose"),
         password: String
     });
 
-module.exports = mongoose.model("User", userSchema)
