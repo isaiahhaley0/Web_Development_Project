@@ -1,12 +1,13 @@
-<div class="row">
+<script src="js/feedControl.js"></script>
+<div class="row" id = "app">
     <div class="row">
         <div class="col-sm-3"></div>
-        <div class="feed col-sm-6"> <div id ="newpost">
+        <div class="feed col-sm-6" > <div id ="newpost">
                 New post
 
                 <form class="input">
-                    <label for="title"><br>Post Title</label> <br>
-                    <input type="text" id="title" class="intitle" name="title"><br>
+                    <label for="ititle"><br>Post Title</label> <br>
+                    <input type="text" id="ititle" class="intitle" name="title"><br>
                     <div>Content:</div>
                     <div id="postbody" class="input" role="textbox"
                          contenteditable >
@@ -44,7 +45,7 @@
 
 
                 <div class="post_title">
-                    <img src="profile_pics/neeson.PNG" class="profile_pic" alt="profile pic">
+                    <img src="/profile_pics/neeson.PNG" class="profile_pic" alt="profile pic">
                     Who Are You?
                     <br>
                     Bryan Mills
@@ -135,6 +136,7 @@
 
             </div></div>
         <div class="col-sm-3 explore">
+
             <div class="trendbox">
                 <div>Trending People </div>
                 <ul class="reccomendedusr">
@@ -173,8 +175,8 @@
             </div>
 
             <div class="trendbox">
-                <div>Trending Topics</div>
-                <ul class="reccomendedusr">
+                <div id="resize">Trending Topics</div>
+                <ul class="reccomendedtopic">
                     <li class="topic hdiv">
                         <a href="profiles/temp_7.html" id = "topiclink1" class="betterlink"><p>Inception: The Movie Never Ended</p></a>
                     </li>
@@ -208,8 +210,9 @@
                         <a href="profiles/temp_7.html" id = "topiclink10" class="betterlink">Fast Cars: Cool or Really Cool?</a>
                     </li>
                 </ul>
-            </div></div>
-    </div>
+             </div>
+
+        </div>
 
     <div class=" column-sm-6 feed">
 

@@ -24,7 +24,7 @@
   float: left;
 }
 .hdiv:hover{
-    width: 150%;
+    width: 170%;
     height: 100px;
 }
 
@@ -54,8 +54,21 @@ white-space: nowrap;
 ul.reccomendedusr{
     list-style-type: circle;
     border-color: gold;
-    font-family: fantasy;
+
  
+}
+#resize{
+    width: 100%;
+    background-color: transparent;
+    text-align: center;
+}
+ul.reccomendedtopic{
+    list-style-type: none;
+    border-color: gold;
+    background-color: transparent;
+    width: auto;
+    max-width: 100%;
+    float: right;
 }
 li.usr{
  
@@ -68,6 +81,7 @@ li.usr{
     float: right;
     overflow: hidden;
 white-space: nowrap;
+    z-index: 25;
 }
 .form input {
     padding: 20px;
@@ -81,14 +95,14 @@ white-space: nowrap;
   }
 li.topic{
   text-align: center;
-     
     margin: auto;
     border-radius: 10px;
     border: 2px solid purple;
     width: 100%;
     float: right;
     overflow: hidden;
-white-space: nowrap;
+    white-space: nowrap;
+    z-index: 25;
 }
   a.buttonlink:link, a.buttonlink:visited {
     background-color: lightcoral;
@@ -105,25 +119,24 @@ white-space: nowrap;
 .explore{
     position: relative;
     float:right  ;
-    max-width: 25%;
-    min-width: auto;
-  
+    width: auto;
+
     font-size: 18px;
-    z-index: 25;
-    border: 2px solid white;
+    z-index: 0;
+    border: 2px solid black;
     border-radius: 5px;
 
 }
 
 .trendbox{
-     padding: 5px;
-     margin: 5px;
-     border: 2px solid blue;
+
+    background-color: transparent;
+     border: 2px solid transparent;
      position: relative;
     float:right  ;
     border-radius: 5px;
-    padding-right: 2%;
-    width: 85%;
+
+
 }
 #newpost{
 
@@ -147,7 +160,7 @@ ul {
   .intitle{
     position: relative;
     border:0px;
-    margin-left: 25%;
+    margin-left: 35%;
     border-bottom: 1px solid blue;
   }
   li a {
@@ -185,9 +198,11 @@ ul {
 }
 #feed{
     position: relative;
+    z-index: 2;
     width:auto;
     float: left;
     background-color: lightblue;
+
 }
 
 .bodyformat{
@@ -237,7 +252,7 @@ ul {
 .navitem{
     position: relative;
     float:left  ;
-    max-width: auto;
+
 
     padding: 5px;
     font-size: 18px;
@@ -247,7 +262,7 @@ ul {
 }
 
 .navelement{
-    max-width: auto;
+
     min-width: 10px;
     padding: 5px;
     font-size: 16px;

@@ -11,3 +11,7 @@ exports.showSignUp = (req,res) =>{
 exports.showLogIn = (req,res) =>{
     res.render("login",  {layout: 'navlessLayout'})
 }
+
+exports.noPage = (req,res) =>{
+    res.render("error")
+}
