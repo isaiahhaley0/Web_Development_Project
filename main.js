@@ -2,7 +2,7 @@ const express = require('express'), app = express();
 homecontroller = require("./controllers/homeController");
 errorController = require("./controllers/errorController");
  
-userController = require("./controllers/usersController");
+usersController = require("./controllers/usersController");
 
 
 layouts = require("express-ejs-layouts");
@@ -24,6 +24,10 @@ app.use(
     })
 );
 app.use(express.json());
+
+app.get("/users", usersController.getAllUsers);
+app.get("/signup", usersController.getUsersPage);
+app.post("/subscribe", usersController.saveUser);
 
 app.use(errorController.pageNotFoundError);
 app.use(errorController.internalServerError);
