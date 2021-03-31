@@ -102,7 +102,7 @@ white-space: nowrap;
   a.buttonlink:hover, a.buttonlink:active {
     background-color: lightcoral;
   }
-#explore{
+.explore{
     position: relative;
     float:right  ;
     max-width: 25%;
@@ -126,13 +126,9 @@ white-space: nowrap;
     width: 85%;
 }
 #newpost{
-    text-align: center;
-    width: 45%;
- 
-    margin-left: 22.5%;
+
     position: relative;
- 
-    padding: 10px;
+    text-align: center;
     border: 2px solid lightblue;
     border-radius: 30px;
 }
@@ -149,7 +145,9 @@ ul {
     border-radius: 25%;
   }
   .intitle{
+    position: relative;
     border:0px;
+    margin-left: 25%;
     border-bottom: 1px solid blue;
   }
   li a {
@@ -186,8 +184,9 @@ ul {
   border-radius: 5%;
 }
 #feed{
-    width: auto;
-    
+    position: relative;
+    width:auto;
+    float: left;
     background-color: lightblue;
 }
 
@@ -203,12 +202,13 @@ ul {
     border:2px solid lightcoral;
     padding: 5px;
     text-align: center;
-    width: 45%;
-    margin-left: 22.5%;
+
+
     position: relative;
 }
 
 .profile_pic{
+    margin-bottom: 10px;
     width: 35px;
     height: 35px;
     float: left;
@@ -221,9 +221,10 @@ ul {
     font-size: 16px;
     font-family: sans-serif;
     border: 2px solid white;
+
     text-align: center;
     padding: 8px;
-    height: 40px;
+    height: 60px;
 }
 .post_content{
     font-size: 16px;

@@ -17,8 +17,12 @@ function closebar(id) {
    
   }
 
-  function hidenavbar(){
-    document.getElementById('navmenu').classList.add('hidden');
-      document.getElementById('openbutton').classList.add('hidden');
-      document.getElementById('closebutton').classList.add('hidden');
-  }
+function showElement() {
+    element = document.querySelector('.navitem');
+    element.style.visibility = 'visible';
+}
+
+function hideElement() {
+    element = document.querySelector('.navitem');
+    element.style.visibility = 'hidden';
+}

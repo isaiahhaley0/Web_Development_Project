@@ -25,15 +25,15 @@
 
   .clsebtn {
     position: relative;
-   
+    background-color: lightcoral;
     left: 10px;
-     
-    
+    color: black;
+    border: black;
   }
   .opnbtn {
     position: absolute;
     background-color: lightcoral;
     right: 10px;
-     
-    
+     color: black;
+    border: black;
   }
