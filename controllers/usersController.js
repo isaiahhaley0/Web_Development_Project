@@ -16,7 +16,7 @@ exports.getAllUsers = (req, res) => {
 };
 
 exports.getUsersPage = (req, res) => {
-    res.render("signup");
+    res.render("signup", {layout: 'navlessLayout'});
 };
 
 exports.saveUser = (req, res) => {

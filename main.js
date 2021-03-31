@@ -13,8 +13,9 @@ mongoose.connect("mongodb://localhost:27017/vibezdb",{useNewUrlParser: true, use
 app.set("port",process.env.PORT||3000);
 
 app.set("view engine", "ejs");
-app.use(layouts);
 
+app.set('layout', 'layout', 'navlessLayout');
+app.use(layouts);
 
 app.get("/",homecontroller.showIndex) ;
 app.use(express.static("public"));

@@ -5,9 +5,9 @@ exports.showIndex = (req,res) =>{
 }
 
 exports.showSignUp = (req,res) =>{
-    res.render("signup")
+    res.render("signup", {layout: 'navlessLayout'})
 }
 
 exports.showLogIn = (req,res) =>{
-    res.render("login")
+    res.render("login",  {layout: 'navlessLayout'})
 }
