@@ -30,7 +30,7 @@ app.get("/users", usersController.getAllUsers);
 app.get("/signup", usersController.getUsersPage);
 app.get("/login",homecontroller.showLogIn);
 app.post("/security", usersController.getSecurityPage);
-
+app.post("/subscribe", usersController.saveUser);
 
 app.use(errorController.pageNotFoundError);
 app.use(errorController.internalServerError);
