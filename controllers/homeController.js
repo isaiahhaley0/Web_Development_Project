@@ -15,3 +15,7 @@ exports.showLogIn = (req,res) =>{
 exports.noPage = (req,res) =>{
     res.render("error")
 }
+
+exports.showSearchPage = (req, res) =>  {
+    res.render("search", {layout: 'navlessLayout'});
+}
