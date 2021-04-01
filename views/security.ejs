@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Vibez Security Sign Up Questions</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/securityDesign.css">
+
+</head>
+
+<body>
+    <header>
+        <h1> Vibez Account Backup Security Questions </h1>
+        <!DOCTYPE html>
+        <section>
+            <h2 class="alert"> Please fill out the Security Questions Below</h2><br>
+            <article>
+                <form id="mainForm" action="/" method="GET">
+                    <fieldset class="border">
+                        <legend class="w-auto">Account Verification Questions</legend>
+                        <div class="row form-group">
+                            <label for="question1" class="col-sm-2 col-form-label">
+                                Security Question 1:
+                            </label>
+                            <select id="question1" onchange="updateQuestion1()">
+                                <option value="Choose">Please choose one of the options below</option>
+                                <option value="maidenName">What is your mother's maiden name?</option>
+                                <option value="firstPet">What is the name of your first pet?</option>
+
+                            </select>
+                            <div class="col-sm-10">
+                                <input type="text" id="questionAns" name="questionAns" class="form-control invisible"
+                                    placeholder="Please Answer Here" required>
+                            </div>
+
+                        </div>
+                        <div class="row form-group">
+                            <label for="question2" class="col-sm-2 col-form-label">
+                                Security Question 2:
+                            </label>
+                            <select id="question2" onchange="updateQuestion2()">
+                                <option value="Choose">Please choose one of the options below</option>
+                                <option value="firstCar">What was your first car?</option>
+                                <option value="elementarySchool">What elementary school did you attend?</option>
+
+                            </select>
+                            <div class="col-sm-10">
+                                <input type="text" id="questionAns2" name="questionAns2" class="form-control invisible"
+                                    placeholder="Please Answer Here " required>
+                            </div>
+
+                        </div>
+                        <div class="row form-group">
+                            <label for="question3" class="col-sm-2 col-form-label">
+                                Security Question 3:
+                            </label>
+                            <select id="question3" onchange="updateQuestion3()">
+                                <option value="Choose">Please choose one of the options below</option>
+                                <option value="cityBorn">What is the name of the town where you were born?</option>
+                                <option value="childhoodNickname">What was your childhood nickname?</option>
+
+                            </select>
+                            <div class="col-sm-10">
+                                <input type="text" id="questionAns3" name="questionAns3" class="form-control invisible"
+                                    placeholder="Please Answer Here" required>
+                            </div>
+
+                            
+                            
+                        </div>
+                        <br>
+                        <input type="submit" class="sub-button" value="Submit">
+                        </div>
+                    </fieldset>
+
+
+
+                </form>
+            </article>
+        </section>
+    </header>
+
+    <section>
+        <!-- <footer>
+            Copyright @ Vibez Inc. 2021
+        </footer> -->
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    </section>
+    <script src="/js/security.js"></script>
+</body>
+
+</html>

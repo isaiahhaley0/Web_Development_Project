@@ -21,13 +21,17 @@ exports.getUsersPage = (req, res) => {
 
 exports.saveUser = (req, res) => {
     let newUser = new User({
-        username: req.body.username,
+        username: req.body.Username,
         email: req.body.email,
         password: req.body.password1
     });
     newUser.save()
     .then(() => {
-        res.render("home");
+        res.render("/");
     })
     .catch(error => {res.send(error)})
+};
+
+exports.getSecurityPage = (req, res) => {
+    res.render("security", {layout: 'navlessLayout'});
 };

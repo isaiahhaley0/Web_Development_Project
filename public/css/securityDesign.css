@@ -1,0 +1,12 @@
+.invisible {
+    display: none;
+}
+.visible {
+    display: block;
+}
+
+.sub-button {
+    align-items: center;
+    text-align: center;
+    
+}

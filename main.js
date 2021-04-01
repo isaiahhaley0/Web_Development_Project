@@ -29,7 +29,8 @@ app.use(express.json());
 app.get("/users", usersController.getAllUsers);
 app.get("/signup", usersController.getUsersPage);
 app.get("/login",homecontroller.showLogIn);
-app.post("/subscribe", usersController.saveUser);
+app.post("/security", usersController.getSecurityPage);
+
 
 app.use(errorController.pageNotFoundError);
 app.use(errorController.internalServerError);
