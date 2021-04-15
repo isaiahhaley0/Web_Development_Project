@@ -1,0 +1,9 @@
+<div class="row" id = "userapp">
+    <input v-model="username" type="text" id="username">
+    <div> {{username}}</div>
+    <input v-model="password" type="text" id="password">
+    <div> {{password}}</div>
+    <input v-model="email" type="email" id="email">
+    <div> {{email}}</div>
+    <button v-on:click="updateUser">Update User</button>
+</div>

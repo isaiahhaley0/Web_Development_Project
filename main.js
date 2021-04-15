@@ -35,6 +35,9 @@ app.post("/subscribe", usersController.saveUser);
 app.post("/", homecontroller.showIndex);
 app.get("/posts", feedController.getAllPosts);
 app.post("/posts",feedController.savePost);
+app.get("/myProfile",usersController.getMyProfile);
+app.get("/editProfile",usersController.editProfile);
+app.put("/editProfile",usersController.editUser);
 app.use(errorController.pageNotFoundError);
 app.use(errorController.internalServerError);
 
