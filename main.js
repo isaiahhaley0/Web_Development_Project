@@ -1,10 +1,9 @@
 const express = require('express'), app = express();
 homecontroller = require("./controllers/homeController");
 errorController = require("./controllers/errorController");
- 
 usersController = require("./controllers/usersController");
-
-
+router = express.Router();
+methodOverride = require("method-override");
 layouts = require("express-ejs-layouts");
 mongoose = require("mongoose");
 
