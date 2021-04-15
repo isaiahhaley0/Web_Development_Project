@@ -2,6 +2,7 @@ const express = require('express'), app = express();
 homecontroller = require("./controllers/homeController");
 errorController = require("./controllers/errorController");
 usersController = require("./controllers/usersController");
+feedController = require("./controllers/feedController");
 router = express.Router();
 methodOverride = require("method-override");
 layouts = require("express-ejs-layouts");
@@ -32,7 +33,7 @@ app.get("/security", usersController.getSecurityPage);
 app.get("/search", homecontroller.showSearchPage);
 app.post("/subscribe", usersController.saveUser);
 app.post("/", homecontroller.showIndex);
-
+app.get("/posts", feedController.getAllPosts);
 app.use(errorController.pageNotFoundError);
 app.use(errorController.internalServerError);
 
