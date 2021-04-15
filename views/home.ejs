@@ -1,21 +1,50 @@
 
-<div class="row" id = "app">
+<div class="row" id = "feedApp" :key="pid">
     <div class="row">
-
-        <div class="feed col-lg-7" >  <div class="card">
+        <div class="col-sm-1"></div>
+        <div class="feed col-lg-7">
+            <div  class="card mb-3">
                 <div class="row no-gutters">
                     <div class="col-md-4">
-                        <img src="..." class="card-img" alt="...">
+
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
+                                <label for = "postTitle">Post Title</label>
+                                <input v-model="posttitle" type="text" id="postTitle" name="postTitle">
+                                 <label for = "postContent">Post Content</label>
+                                <input  v-model="postcontent" type="text" id="postContent" name="postContent">
+
+                                <button v-on:click="submitPost">Post</button>
+
                         </div>
-                    </div></div></div></div>
+                    </div>
+
+                </div>
+            </div>
+            <template v-for = "post in posts">
+                <div  class="card mb-3">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{post.post_title}}</h5>
+                                <p class="card-text">{{post.post_author}}</p>
+                                <p class="card-text">{{post.post_content}}</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </template>
+             </div>
+
         <div class="col-lg-1"></div>
-        <div class="col-lg-4 explore">
+        <div class="col-lg-3 explore">
 
             <div class="trendbox">
                 <div id="resize">Trending People </div>
@@ -110,4 +139,4 @@
 
 
 
-</div>
+</div></div>

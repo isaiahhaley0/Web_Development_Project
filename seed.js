@@ -1,4 +1,4 @@
-const mongoose = require("mongoose"),Users = require("./models/user"),Post = require("./models/post");
+const mongoose = require("mongoose"),Users = require("./models/user"),Post = require("./models/posts");
 
 
 mongoose.connect("mongodb://localhost:27017/vibezdb",{useNewUrlParser: true, useUnifiedTopology: true })
@@ -42,18 +42,18 @@ const pSeed =[
 
     }
 ];
+
+var commands = [];
 pSeed.forEach(p =>{
     commands.push(
         Post.create({
             post_title: p.post_title,
             post_author:p.post_author,
-            post_content:p.post_content
-
+            post_content:p.post_content,
+            post_id:p.post_id
         })
     );
 });
-var commands = [];
-
 uSeed.forEach(c => {
     commands.push(
       Users.create({

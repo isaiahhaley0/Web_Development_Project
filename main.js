@@ -34,10 +34,11 @@ app.get("/search", homecontroller.showSearchPage);
 app.post("/subscribe", usersController.saveUser);
 app.post("/", homecontroller.showIndex);
 app.get("/posts", feedController.getAllPosts);
+app.post("/posts",feedController.savePost);
 app.use(errorController.pageNotFoundError);
 app.use(errorController.internalServerError);
 
-  
+
 
 app.listen(app.get("port"), ()=>{
 
