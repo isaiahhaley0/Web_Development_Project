@@ -7,6 +7,22 @@ router = express.Router();
 methodOverride = require("method-override");
 layouts = require("express-ejs-layouts");
 mongoose = require("mongoose");
+const expressSession = require("express-session"),
+cookieParser = require("cookie-parser"),
+connectFlash = require("connect-flash");
+
+
+router.use(cookieParser("secret_passcode"));
+router.use(expressSession({
+    secret: "secret_passcode",
+    cookie: {
+        maxAge: 4000000
+    },
+    resave: false,
+    saveUninitialized: false
+}));
+router.use(connectFlash());
+
 
 mongoose.connect("mongodb://localhost:27017/vibezdb",{useNewUrlParser: true, useUnifiedTopology: true })
 
