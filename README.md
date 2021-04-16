@@ -1,24 +1,25 @@
-# Web Development Assignment 3
+# Web Development Assignment 4
 
 ## Technologies Used:
 * HTML
 * CSS
 * node.js
 * express
+* Vue.js
 
 ## Design Choices:
-Express is used to control the layout of the page, such as displaying the navigation bar on certain pages, while hiding it on others(such as the login and signup pages), as allowing the user to have access to the navigation bar before they've logged in or signed up may allow them to access parts of the app they should not have at the time,  and allowing for the navigation of the site without refreshing the page.
+Express is used to control the layout of the page, such as displaying the navigation bar on certain pages, while hiding it on others(such as the login and signup pages), as allowing the user to have access to the navigation bar before they've logged in or signed up may allow them to access parts of the app they should not have at the time,  and allowing for the navigation of the site without refreshing the page. Vue.js was used client side for updating the feed/posts as well as dynamically displaying user data.
 
 
 ## Future Plans:
-Future Plans for this project include implementation of the search function, the admin page, messaging, user functionality such as liking posts and adding friends, as well as adding functionality to allow posts on the homepage/feed.
-
+Future Plans for this project include implementation of the messaging function, and the trending users/topics sections
 
 ## Responsibilities:
-Isaiah: Homepage, errors, header and navbar, plus styling.
+Isaiah: Posts Feed, CRUD actions for user.
 
 
-Ethan: Database, login/signup pages, routing.
+Ethan: User Authentication/cookies/
+
 ## Execution Instructions:
 
 Launching the server follows the procedure as described in the project description.

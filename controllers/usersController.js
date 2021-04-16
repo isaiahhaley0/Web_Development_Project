@@ -1,3 +1,4 @@
+
 const User = require("../models/user");
 
 exports.getAllUsers = (req, res) => {
@@ -14,7 +15,10 @@ exports.getAllUsers = (req, res) => {
             console.log("promise complete");
         })
 };
-
+exports.deleteUser = (req,res)=>{
+    var data = req.body.username;
+    User.findOneAndRemove({username:data}).then(res.json({"message":"success"}));
+}
 exports.getUsersPage = (req, res) => {
     res.render("signup", {layout: 'navlessLayout'});
 };
@@ -67,4 +71,9 @@ exports.editProfile = (req,res) =>{
 };
 exports.getSecurityPage = (req, res) => {
     res.render("security", {layout: 'navlessLayout'});
+};
+
+exports.deleteAccount = (req,res)=>
+{
+    res.render("users/delete");
 };

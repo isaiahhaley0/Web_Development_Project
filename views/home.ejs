@@ -16,7 +16,7 @@
                                  <label for = "postContent">Post Content</label>
                                 <input  v-model="postcontent" type="text" id="postContent" name="postContent">
 
-                                <button v-on:click="submitPost">Post</button>
+                                <button v-on:click="submitPost" class ="postbutton col-md-6">Post</button>
 
                         </div>
                     </div>
@@ -31,7 +31,7 @@
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h5 class="card-title">{{post.post_title}}</h5>
+                                <h5 class="post_title">{{post.post_title}}</h5>
                                 <p class="card-text">{{post.post_author}}</p>
                                 <p class="card-text">{{post.post_content}}</p>
                                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>

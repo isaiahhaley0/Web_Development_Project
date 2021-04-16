@@ -38,6 +38,8 @@ app.post("/posts",feedController.savePost);
 app.get("/myProfile",usersController.getMyProfile);
 app.get("/editProfile",usersController.editProfile);
 app.put("/editProfile",usersController.editUser);
+app.get("/delete", usersController.deleteAccount);
+app.delete("/delete", usersController.deleteUser);
 app.use(errorController.pageNotFoundError);
 app.use(errorController.internalServerError);
 
