@@ -5,17 +5,26 @@ mongoose.connect("mongodb://localhost:27017/vibezdb",{useNewUrlParser: true, use
 mongoose.connection;
 const uSeed =[
     {
-        username:'staff',
+        name:{
+            first:'Staff',
+            last: 'Staff'
+        },
         email:'staff@vibez.net',
         password:'adminpasswword'
     },
     {
-        username:'bary b',
+        name:{
+            first:'barry',
+            last: 'benson'
+        },
         email:'bbenson@bmail.com',
         password:'password'
     },
     {
-        username:'imonty',
+        name:{
+          first:'Joe',
+          last: 'Joeson'
+        },
         email:"imnt@gmail.com",
         password:'hunter2'
     }
@@ -57,9 +66,12 @@ pSeed.forEach(p =>{
 uSeed.forEach(c => {
     commands.push(
       Users.create({
-        username: c.username,
+        name:{
+            first: c.name.first,
+            last: c.name.last
+        },
         email: c.email,
- 
+        password: c.password    
       })
     );
   });
