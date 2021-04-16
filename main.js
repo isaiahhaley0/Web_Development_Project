@@ -14,7 +14,7 @@ connectFlash = require("connect-flash");
 
 router.use(cookieParser("secret_passcode"));
 router.use(expressSession({
-    secret: "secret_passcode",
+    secret: "impossiblePassword",
     cookie: {
         maxAge: 4000000
     },
@@ -22,6 +22,11 @@ router.use(expressSession({
     saveUninitialized: false
 }));
 router.use(connectFlash());
+
+router.use((req, res, next) => {
+    res.locals.flashMessages = req.flash();
+    next();
+});
 
 
 mongoose.connect("mongodb://localhost:27017/vibezdb",{useNewUrlParser: true, useUnifiedTopology: true })

@@ -28,13 +28,19 @@ module.exports = {
         });
         subscriber.create(newSubscriber)
         .then( subscriber => {
+            req.flash("success", `${subscriber.name}'s account created successfully!`);
             res.locals.subscriber = subscriber;
             res.locals.redirect = "/subscribers";
             next()
         })
         .catch (error => {
-            console.log(`Error saving user: ${error.message}`);
-            next(error)
+            console.log(`Error creating Vibez user: ${error.message}`);
+            res.locals.redirect = "/subscribers/new";
+            req.flash(
+                "error",
+                `Failed to create user account because: ${error.message}.`
+            );
+            next();
         })
     },
     redirectView: (req, res, next) => {
