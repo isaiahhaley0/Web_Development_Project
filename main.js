@@ -7,10 +7,12 @@ router = express.Router();
 methodOverride = require("method-override");
 layouts = require("express-ejs-layouts");
 mongoose = require("mongoose");
-const expressSession = require("express-session"),
-cookieParser = require("cookie-parser"),
-connectFlash = require("connect-flash");
-
+passport = require("passport"),
+    cookieParser = require("cookie-parser"),
+    expressSession = require("express-session"),
+    expressValidator = require("express-validator"),
+    connectFlash = require("connect-flash"),
+    User = require("./models/user");
 
 router.use(cookieParser("secret_passcode"));
 router.use(expressSession({
@@ -22,9 +24,15 @@ router.use(expressSession({
     saveUninitialized: false
 }));
 router.use(connectFlash());
-
+router.use(passport.initialize());
+router.use(passport.session());
+passport.use(User.createStrategy());
+passport.serializeUser(User.serializeUser);
+passport.deserializeUser(User.deserializeUser);
 router.use((req, res, next) => {
     res.locals.flashMessages = req.flash();
+    res.locals.loggedIn = req.isAuthenticated();
+    res.locals.currentUser = req.user;
     next();
 });
 
@@ -54,6 +62,7 @@ app.get("/security", usersController.getSecurityPage);
 app.get("/search", homecontroller.showSearchPage);
 app.post("/subscribe", usersController.saveUser);
 app.post("/", homecontroller.showIndex);
+app.post("/login", homecontroller.LogIn);
 app.get("/posts", feedController.getAllPosts);
 app.post("/posts",feedController.savePost);
 app.get("/myProfile",usersController.getMyProfile);

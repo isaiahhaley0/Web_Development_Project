@@ -1,4 +1,5 @@
 const { TOO_MANY_REQUESTS } = require("http-status-codes")
+const passportlocalMongoose= require("passport-local-mongoose");
 const mongoose = require("mongoose"), 
 { Schema } = require ("mongoose"), 
 Subscriber = require("./subscriber")
@@ -59,6 +60,8 @@ userSchema.pre("save", function(next) {
         next();
     }
 })
-
+userSchema.plugin(passportlocalMongoose,{
+    usernameField:"email"
+});
 module.exports = mongoose.model("User", userSchema);
 

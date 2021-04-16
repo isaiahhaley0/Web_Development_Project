@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <form action="/" method="POST">
+    <form action="/login" method="POST">
     <div class="section">
         <div class="content">
             <img src="/logos/vibez.png" width="80px" height="70px">
@@ -23,11 +23,11 @@
 
         <div class="main">
             <div class="form">
-                <input type="email" class="text" placeholder="Email or Username" required><br>
-                <input type="password" class="password" placeholder="Password" required><br>
+                <input type="email" id="email" name="email" class="text" placeholder="Email or Username" required><br>
+                <input type="password" id="password" name="password" class="password" placeholder="Password" required><br>
             </div>
             <div class="btn">
-                <input class="button" type="submit" name="login" value="Log In" />
+                <button type="submit">Log In</button>
             </div>
                 <p><a href="/security"> Forgot Username?</a></p><br>
                 <p><a href="/security"> Forgot Password?</a></p>
