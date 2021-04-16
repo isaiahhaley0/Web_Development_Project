@@ -71,7 +71,7 @@ uSeed.forEach(c => {
             last: c.name.last
         },
         email: c.email,
-        password: c.password    
+        password: c.password
       })
     );
   });
