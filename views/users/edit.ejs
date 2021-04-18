@@ -1,9 +1,26 @@
-<div class="row" id = "userapp">
-    <input v-model="username" type="text" id="username">
-    <div> {{username}}</div>
-    <input v-model="password" type="text" id="password">
-    <div> {{password}}</div>
-    <input v-model="email" type="email" id="email">
-    <div> {{email}}</div>
-    <button v-on:click="updateUser">Update User</button>
+<h1>Edit Profile</h1>
+<div class = "row">
+    <div class="col-sm-4">
+
+    </div>
+    <div class="col-sm-3">
+        <form>
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" name ="firstName" id="firstName" class="form-text">
+                <label for="lastName">Last Name</label>
+                <input type="text" name="lastName" id="lastName" class="form-text">
+                <label for="email">Email: </label>
+                <input type="email" id="email" name="email" class="form-text">
+                <label for="zip">Zipcode: </label>
+                <input type="number" id="zip" name="zip">
+                <label for="passc">Passcode: </label>
+                <input type="text" id="passc" name="pasc">
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+        <a class="col-md-3 delete_link" href="/delete" class="btn">DELETE PROFILE</a>
+    </div>
+
+
 </div>
