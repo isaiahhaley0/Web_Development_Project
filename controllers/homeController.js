@@ -15,6 +15,7 @@ exports.LogIn = (req,res, next)=>{
     var x = req.body;
     User.findOne({email:x.email}).then(function(doc){
         console.log(doc);
+        if(doc ){
         if(doc.email===x.email && doc.password===x.password)
         {
             let cookDock = {email:x.email};
@@ -24,6 +25,8 @@ exports.LogIn = (req,res, next)=>{
 
         }
         else{
+            res.render("login", {layout: 'navlessLayout'});
+        }} else{
             res.render("login", {layout: 'navlessLayout'});
         }
     });

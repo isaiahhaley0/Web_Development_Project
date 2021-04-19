@@ -3,21 +3,21 @@
     <div class="col-sm-4">
 
     </div>
-    <div class="col-sm-3">
+    <div class="col-sm-3"  id="userapp">
         <form>
             <div class="form-group">
-                <label for="firstName">First Name</label>
-                <input type="text" name ="firstName" id="firstName" class="form-text">
-                <label for="lastName">Last Name</label>
-                <input type="text" name="lastName" id="lastName" class="form-text">
-                <label for="email">Email: </label>
-                <input type="email" id="email" name="email" class="form-text">
-                <label for="zip">Zipcode: </label>
-                <input type="number" id="zip" name="zip">
-                <label for="passc">Passcode: </label>
-                <input type="text" id="passc" name="pasc">
+
+                <input placeholder="First Name" v-model= "firstName" type="text" name ="firstName" id="firstName" class="form-text">
+
+                <input placeholder="Last Name" v-model="lastName" type="text" name="lastName" id="lastName" class="form-text">
+
+                <input placeholder="email" v-model="email" type="email" id="email" name="email" class="form-text">
+
+                <input type="postal" id="zip" name="zip">
+
+                <input placeholder="passcode" vmodel="password" type="text" id="passc" name="pasc">
             </div>
-            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="submit" class="btn btn-primary" v-on:click="updateUser">Save</button>
         </form>
         <a class="col-md-3 delete_link" href="/delete" class="btn">DELETE PROFILE</a>
     </div>

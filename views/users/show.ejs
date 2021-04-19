@@ -1,13 +1,12 @@
-<script src = ""></script>
+
 <div class = "row">
-    <div class="col-sm-4">
-
+    <div class="d-flex justify-content-center">
+        <div class="usrcard">
+        Name: <%=usr.name.first%> <%=usr.name.last%><br>
+        Email: <%=usr.email%><br>
+        </div>
     </div>
-    <div class="col-sm-3">
-    UserName: <%= usr.username %><br>
+    <a class="col-sm-3 button" href="/editProfile">Edit Profile</a>
+    <a class="col-md-3 button" href="/delete">Delete Profile</a>
 
-    Email: <%= usr.email%>
-       </div>
-
-    <a class="col-md-3 delete_link" href="/delete">goto delete page</a>
 </div>

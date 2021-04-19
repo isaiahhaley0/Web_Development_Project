@@ -40,9 +40,11 @@ var feedApp = new Vue({
 
         submitPost: function (event){
             var self = this;
-            var temp = document.cookie;
-            temp = temp.split(';');
-            temp = temp[1].split('=')[1];
+            var temp =  document.cookie
+                .split('; ')
+                .find(row => row.startsWith('email='))
+                .split('=')[1];
+
             var posttitle = self.posttitle;
             var postauthor =  decodeURIComponent(temp);
             var postcontent = self.postcontent;

@@ -17,8 +17,9 @@ exports.getAllUsers = (req, res) => {
         })
 };
 exports.deleteUser = (req,res)=>{
-    var data = req.body.username;
-    User.findOneAndRemove({username:data}).then(res.json({"message":"success"}));
+    var data = req.body.email;
+    User.findOneAndRemove({email:data}).then(res.redirect('/'));
+
 }
 exports.getUsersPage = (req, res) => {
     res.render("signup", {layout: 'navlessLayout'});
@@ -26,7 +27,11 @@ exports.getUsersPage = (req, res) => {
 
 exports.saveUser = (req, res) => {
     let newUser = new User({
-        username: req.body.Username,
+        name:
+            {
+                first: req.body.firstName,
+                last: req.body.lastName,
+            },
         email: req.body.email,
         password: req.body.password1
     });
@@ -37,8 +42,8 @@ exports.saveUser = (req, res) => {
     .catch(error => {res.send(error)})
 };
 exports.getMyProfile = (req,res) =>{
-    let currentUser = "staff";
-    User.findOne({username:currentUser}).then(function(doc){
+    var email = decodeURIComponent(req.headers.cookie).split("=")[1];
+    User.findOne({email:email}).then(function(doc){
         res.render("users/show",{usr:doc} );
     });
 
@@ -46,9 +51,16 @@ exports.getMyProfile = (req,res) =>{
 
 exports.editUser = (req,res)=>{
     let data = req.body;
-    let profileToUpdate  = data.oldusername;
-    var filter ={username: profileToUpdate};
-    var update={username: data.username, password: data.password, email: data.email};
+    let profileToUpdate  = data.email;
+    var filter ={email: profileToUpdate};
+    var update={name:
+    {
+        first:data.firstName,
+        last:data.lastName
+    },
+        password: data.password1
+    }
+        ;
     var option={new: true};
     User.findOneAndUpdate(filter , update , option).then(posts => {
         res.json({message:"Success"})
