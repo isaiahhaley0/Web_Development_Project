@@ -18,7 +18,7 @@ Future Plans for this project include implementation of the messaging function, 
 Isaiah: Posts Feed, CRUD actions for user.
 
 
-Ethan: User Authentication/cookies/
+Ethan: User Authentication/cookies/sessions; along with db management of user data and id's pushed to vibezdb on MongoDB to track Users and ID of users along with creation and timestamps.
 
 ## Execution Instructions:
 
