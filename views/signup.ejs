@@ -3,8 +3,8 @@
 
 <head>
     <title> Sign Up with Vibez</title>
-    <link rel="stylesheet" href="/css/signup.css">
-    <script src="/js/validateForm.js"></script>
+    <link rel="stylesheet" href="css/signup.css">
+    <script src="/public/js/validateForm.js"></script>
     
 </head>
 
@@ -12,11 +12,11 @@
     <form name="signupForm" onsubmit="return checkPassword(this)" action="/subscribe" method="POST">
         <div id="login-box">
             <div class="left-box">
-                <h1> Sign Up</h1>
+                <h1> Sign Up with Vibez</h1>
                 <input type="text" name="firstName" placeholder="First Name" />
                 <input type="text" name="lastName" placeholder="Last Name" />
                 <input type="email" name="email" placeholder="Email" required />
-                <input type="password" id="pass1" name="password1" placeholder="Password" />
+                <input type="password" name="password1" placeholder="Password" />
                 <input type="password" name="password2" placeholder="Retype Password" />
 
                 <input type="submit" name="signup-button" value="Sign Up" />
@@ -25,15 +25,8 @@
 
 
             </div>
-
-            <div class="right-box">
-                <span class="signinwith"> Sign in with<br />Social Network</span>
-                <button class="social facebook"> Log in with Facebook</button>
-                <button class="social google"> Log in with Google+</button>
-            </div>
-            <div class="or"> OR </div>
         </div>
-        <script src="/js/validateForm.js"></script>
+        <script src="/public/js/validateForm.js"></script>
     </form>
 </body>
 
