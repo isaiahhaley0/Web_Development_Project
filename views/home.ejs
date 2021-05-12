@@ -1,8 +1,8 @@
 
 <div class="row" >
-    <div class="row" id = "feedApp" :key="pid">
+    <div class=" col-lg-7" id = "feedApp" :key="pid">
         <div class="col-sm-1"></div>
-        <div class="feed col-lg-7">
+        <div class="feed">
             <div  class="card mb-3">
                 <div class="row no-gutters">
                     <div class="col-md-4">
@@ -54,7 +54,14 @@
 
 
         </div>
-    <div class="col-lg-1" id="tagApp">{{message}}</div>
+    <div class="col-lg-4" id="tagApp">
+        <template v-for = "tag in tags">
+            <div class="trending_tag">
+                {{tag.name}}
+            </div>
+
+        </template>
+    </div>
     <div>
 
     </div>
