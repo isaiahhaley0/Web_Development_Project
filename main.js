@@ -62,6 +62,11 @@ app.use(
 );
 app.use(express.json());
 app.post("/", homecontroller.showIndex);
+
+app.get("/posts", feedController.getAllPosts);
+app.post("/posts",feedController.savePost);
+
+
 app.get("/users", usersController.getAllUsers);
 app.get("/signup", usersController.getUsersPage);
 app.post("/signup", usersController.validate);
@@ -71,8 +76,6 @@ app.get("/search", homecontroller.showSearchPage);
 app.post("/subscribe", usersController.saveUser);
 
 app.post("/login", homecontroller.LogIn);
-app.get("/posts", feedController.getAllPosts);
-app.post("/posts",feedController.savePost);
 app.get("/myProfile",usersController.getMyProfile);
 app.get("/editProfile",usersController.editProfile);
 app.put("/editProfile",usersController.editUser);
