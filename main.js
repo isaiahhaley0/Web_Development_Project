@@ -1,4 +1,3 @@
-const { use } = require('passport');
 
 const express = require('express'), app = express();
 homecontroller = require("./controllers/homeController");
@@ -18,8 +17,7 @@ passport = require("passport"),
     connectFlash = require("connect-flash"),
     User = require("./models/user");
     Posts = require("./models/posts");
-var cors = require('cors')
-router.use(cors())
+ 
 
 router.use(cookieParser("secret_passcode"));
 router.use(expressSession({
@@ -63,20 +61,17 @@ app.use(
 );
 app.use(express.json());
 app.post("/", homecontroller.showIndex);
-
-app.get("/posts", feedController.getAllPosts);
-app.post("/posts",feedController.savePost);
-
-
 app.get("/users", usersController.getAllUsers);
 app.get("/signup", usersController.getUsersPage);
-app.post("/signup", usersController.validate, usersController.create);
+app.post("/signup", usersController.validate);
 app.get("/login",homecontroller.showLogIn);
 app.get("/security", usersController.getSecurityPage);
 app.get("/search", homecontroller.showSearchPage);
 app.post("/subscribe", usersController.saveUser);
 
 app.post("/login", homecontroller.LogIn);
+app.get("/posts", feedController.getAllPosts);
+app.post("/posts",feedController.savePost);
 app.get("/myProfile",usersController.getMyProfile);
 app.get("/editProfile",usersController.editProfile);
 app.put("/editProfile",usersController.editUser);
