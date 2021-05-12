@@ -113,3 +113,27 @@ exports.validate = (req, res, next) => {
         else next();
     });
 };
+module.create = (req, res, next) => {
+    if (req.skip) return next();
+
+    let newUser = new User({
+        name:
+            {
+                first: req.body.firstName,
+                last: req.body.lastName,
+            },
+        email: req.body.email,
+        password: req.body.password1
+    });
+    User.register(newUser, req.body.password, (error, user) => {
+        if(user) {
+            req.flash("success", "User account successfully created!");
+            res.locals.redirect = "/users";
+        }
+        else {
+            req.flash("error", `Failed to create user account: ${error.message}`);
+            res.locals.redirect = "/users/new";
+            next()
+        }
+    });
+};

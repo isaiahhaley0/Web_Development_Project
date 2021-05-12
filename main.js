@@ -1,3 +1,5 @@
+const { use } = require('passport');
+
 const express = require('express'), app = express();
 homecontroller = require("./controllers/homeController");
 errorController = require("./controllers/errorController");
@@ -65,7 +67,7 @@ app.use(express.json());
 app.post("/", homecontroller.showIndex);
 app.get("/users", usersController.getAllUsers);
 app.get("/signup", usersController.getUsersPage);
-app.post("/signup", usersController.validate);
+app.post("/signup", usersController.validate, usersController.create);
 app.get("/login",homecontroller.showLogIn);
 app.get("/security", usersController.getSecurityPage);
 app.get("/search", homecontroller.showSearchPage);
