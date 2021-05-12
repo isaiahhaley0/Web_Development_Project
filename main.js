@@ -30,6 +30,11 @@ router.use(expressSession({
     saveUninitialized: false
 }));
 router.use(connectFlash());
+router.use((req, res, next) => {
+    res.locals.flashMessages = req.flash();
+    next();
+});
+
 router.use(passport.initialize());
 router.use(passport.session());
 passport.use(User.createStrategy());
@@ -65,12 +70,13 @@ app.post("/", homecontroller.showIndex);
 app.get("/users", usersController.getAllUsers);
 app.get("/signup", usersController.getUsersPage);
 app.post("/signup", usersController.validate);
-app.get("/login",homecontroller.showLogIn);
+app.get("/login",usersController.login);
+app.post("/login", usersController.authenticate, usersController.redirectView);
 app.get("/security", usersController.getSecurityPage);
 app.get("/search", homecontroller.showSearchPage);
 app.post("/subscribe", usersController.saveUser);
 
-app.post("/login", homecontroller.LogIn);
+
 app.get("/posts", feedController.getAllPosts);
 app.post("/posts",feedController.savePost);
 app.get("/myProfile",usersController.getMyProfile);
