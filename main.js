@@ -1,5 +1,6 @@
 
-const express = require('express'), app = express();
+const express = require('express');
+var cors = require('cors'), app = express();
 homecontroller = require("./controllers/homeController");
 errorController = require("./controllers/errorController");
 usersController = require("./controllers/usersController");
@@ -10,14 +11,14 @@ methodOverride = require("method-override");
 layouts = require("express-ejs-layouts");
 mongoose = require("mongoose");
 passport = require("passport"),
-
+app.use(cors())
     cookieParser = require("cookie-parser"),
     expressSession = require("express-session"),
     expressValidator = require("express-validator"),
     connectFlash = require("connect-flash"),
     User = require("./models/user");
     Posts = require("./models/posts");
- 
+
 
 router.use(cookieParser("secret_passcode"));
 router.use(expressSession({
