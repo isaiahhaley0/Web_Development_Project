@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d96f175-6685-4fc8-9440-90becd296a2e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +86,7 @@
       <workItem from="1618860482260" duration="8339000" />
       <workItem from="1619191514068" duration="29000" />
       <workItem from="1620770723700" duration="155000" />
-      <workItem from="1620771034327" duration="5348000" />
+      <workItem from="1620771034327" duration="6615000" />
     </task>
     <servers />
   </component>
@@ -110,7 +110,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/controllers/feedController.js</url>
-          <line>24</line>
+          <line>26</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -160,7 +160,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/controllers/feedController.js</url>
-          <line>18</line>
+          <line>20</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -180,7 +180,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/controllers/feedController.js</url>
-          <line>5</line>
+          <line>7</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>

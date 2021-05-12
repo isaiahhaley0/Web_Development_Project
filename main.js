@@ -6,23 +6,21 @@ errorController = require("./controllers/errorController");
 usersController = require("./controllers/usersController");
 feedController = require("./controllers/feedController");
 router = express.Router();
+
 methodOverride = require("method-override");
 layouts = require("express-ejs-layouts");
 mongoose = require("mongoose");
 passport = require("passport"),
-    cors = require("cors"),
+
     cookieParser = require("cookie-parser"),
     expressSession = require("express-session"),
     expressValidator = require("express-validator"),
     connectFlash = require("connect-flash"),
     User = require("./models/user");
-    Posts = require("./models/posts")
-app.use(cors());
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
+    Posts = require("./models/posts");
+var cors = require('cors')
+router.use(cors())
+
 router.use(cookieParser("secret_passcode"));
 router.use(expressSession({
     secret: "impossiblePassword",
@@ -65,6 +63,11 @@ app.use(
 );
 app.use(express.json());
 app.post("/", homecontroller.showIndex);
+
+app.get("/posts", feedController.getAllPosts);
+app.post("/posts",feedController.savePost);
+
+
 app.get("/users", usersController.getAllUsers);
 app.get("/signup", usersController.getUsersPage);
 app.post("/signup", usersController.validate, usersController.create);
@@ -74,8 +77,6 @@ app.get("/search", homecontroller.showSearchPage);
 app.post("/subscribe", usersController.saveUser);
 
 app.post("/login", homecontroller.LogIn);
-app.get("/posts", feedController.getAllPosts);
-app.post("/posts",feedController.savePost);
 app.get("/myProfile",usersController.getMyProfile);
 app.get("/editProfile",usersController.editProfile);
 app.put("/editProfile",usersController.editUser);
