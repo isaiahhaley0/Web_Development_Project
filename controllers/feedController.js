@@ -2,8 +2,8 @@
 const passport = require("passport");
 const Post = require("../models/posts");
 const Tag = require("../models/tag")
-
-exports.getAllPosts = (req, res) => {
+const mongoose = require("mongoose");
+    exports.getAllPosts = (req, res) => {
     Post.find({})
         .exec()
         .then(posts => {
@@ -31,14 +31,9 @@ exports.savePost = (req, res) => {
          });
     var pid = newPost._id;
     console.log(pid);
-    newPost.save()
-        .then(() => {
-            res.json({
-                message: "success",
-                post_id: pid
-            });
-        })
-        .catch(error => {res.send(error)}).then(()=>{
-
+    const result = Post.create(newPost, function (err, doc) {
+    res.json({
+        postid: newPost._id
+    })
     })
 };

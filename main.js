@@ -79,7 +79,7 @@ app.post("/subscribe", usersController.saveUser);
 
 app.post("/tags",tagController.saveTag);
 app.get("/tags", tagController.listTrendingTags);
-
+app.get('/tags/:id', tagController.listPostByTag);
 app.get("/posts", feedController.getAllPosts);
 app.post("/posts",feedController.savePost);
 app.get("/myProfile",usersController.getMyProfile);

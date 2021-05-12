@@ -64,8 +64,9 @@ var feedApp = new Vue({
 
                 .then(response => response.json())
                 .then(data => {
-                    refid = data.post_id;
-                    console.log(data.post_id)
+                    refid = parseInt(data.postid,16)-1;
+                    refid = refid.toString(16);
+                    console.log(refid)
                     console.log('Success:', data);
                     window.location.reload()
                 })

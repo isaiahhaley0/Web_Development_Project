@@ -57,7 +57,9 @@
     <div class="col-lg-4" id="tagApp">
         <template v-for = "tag in tags">
             <div class="trending_tag">
-                {{tag.name}}
+
+                <a :href="`/tags/${tag._id}`">
+                    {{tag.name}}</a>
             </div>
 
         </template>

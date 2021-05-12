@@ -29,6 +29,22 @@ exports.saveTag = (req, res) => {
 
 }
 
+exports.listPostByTag = (req,res)=>{
+    var tagID =req.params.id;
+    console.log(tagID);
+    myposts = [];
+    var iter;
+    Tag.findById(tagID).exec().then(tgs => {
+            console.log(tgs.name)
+            Post.find({list_tags: tgs.name}).exec().then(result =>{
+                res.render('posts/show', {layout: 'layout', result: result})
+            })
+        }
+    )
+
+
+}
+
 exports.listTrendingTags = (req, res)=>{
     const options = {
         count:-1
