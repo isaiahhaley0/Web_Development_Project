@@ -18,7 +18,7 @@ var tagApp = new Vue({
                     // Examine the text in the response
                     response.json().then(function(data) {
 
-                        self.tags = data.reverse();
+                        self.tags = data;
                         console.log(data);
 
                     });

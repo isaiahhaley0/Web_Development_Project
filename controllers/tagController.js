@@ -23,7 +23,10 @@ exports.saveTag = (req, res) => {
 }
 
 exports.listTrendingTags = (req, res)=>{
-    Tag.find({})
+    const options = {
+        count:-1
+    }
+    Tag.find({}).sort(options)
         .exec()
         .then(posts => {
             res.json(posts)
