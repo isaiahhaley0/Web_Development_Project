@@ -52,7 +52,7 @@ var feedApp = new Vue({
             self.pid = pid;
             const data = { "post_title": posttitle, "post_author":postauthor,"post_content":postcontent,"post_id":pid  };
 
-            fetch('http://localhost:3000/posts', {
+            fetch('/posts', {
                 method: 'POST', // or 'PUT'
                 headers: {
                     'Content-Type': 'application/json',
