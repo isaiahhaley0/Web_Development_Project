@@ -262,9 +262,13 @@ ul {
      margin: 5px;
      padding: 5px;
  }
-
+.post_tag{
+    background-color: transparent;
+    color: grey;
+}
  .post_footer{
      background-color: transparent;
+
  }
 .post_content{
     font-size: 16px;

@@ -11,12 +11,11 @@
                     <div class="col-md-8">
                         <div class="card-body">
 
-                                <label for = "postTitle">Post Title</label>
-                                <input v-model="posttitle" type="text" id="postTitle" name="postTitle">
-                                 <label for = "postContent">Post Content</label>
-                                <input  v-model="postcontent" type="text" id="postContent" name="postContent">
-                                <label for = "posttags">Tags</label>
-                                <input v-model="posttags" type="text" id = "postTags" name="postTags">
+                                <input v-model="posttitle" placeholder="Post Title" type="text" id="postTitle" name="postTitle">
+
+                                <input  v-model="postcontent" placeholder="Post Content" type="text" id="postContent" name="postContent">
+
+                                <input v-model="posttags" placeholder="Tags" type="text" id = "postTags" name="postTags">
                                 <button v-on:click="submitPost" class ="postbutton col-md-6">Post</button>
 
                         </div>
@@ -37,7 +36,7 @@
                                 <p class="card-text">{{post.post_content}}</p>
                                 <div class="container">
                                     <div class="row justify-content-center">
-                                    <div v-for="item in post.list_tags" class="col-md-auto">
+                                    <div v-for="item in post.list_tags" class="col-md-auto post_tag">
                                         {{item}}
                                     </div>
                                     </div>
