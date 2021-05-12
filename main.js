@@ -14,8 +14,13 @@ passport = require("passport"),
     expressValidator = require("express-validator"),
     connectFlash = require("connect-flash"),
     User = require("./models/user");
-    Posts = require("./models/posts");
+    Posts = require("./models/posts")
 app.use(cors());
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 router.use(cookieParser("secret_passcode"));
 router.use(expressSession({
     secret: "impossiblePassword",
