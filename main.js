@@ -14,6 +14,7 @@ passport = require("passport"),
     expressValidator = require("express-validator"),
     connectFlash = require("connect-flash"),
     User = require("./models/user");
+    Posts = require("./models/posts");
 app.use(cors());
 router.use(cookieParser("secret_passcode"));
 router.use(expressSession({
