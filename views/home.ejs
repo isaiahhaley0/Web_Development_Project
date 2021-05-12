@@ -36,8 +36,8 @@
                                 <p class="card-text">{{post.post_author}}</p>
                                 <p class="card-text">{{post.post_content}}</p>
                                 <ul class="post_footer">
-                                    <li class="card-footer">
-                                        {{post.post_tags}}
+                                    <li v-for="item in post.list_tags" class="card-footer">
+                                        {{item}}
                                     </li>
                                 </ul>
                                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>

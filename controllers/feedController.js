@@ -1,7 +1,7 @@
 "use strict";
 const passport = require("passport");
 const Post = require("../models/posts");
-
+const Tag = require("../models/tag")
 
 exports.getAllPosts = (req, res) => {
     Post.find({})
@@ -19,13 +19,25 @@ exports.getAllPosts = (req, res) => {
 };
 
 exports.savePost = (req, res) => {
+    var my_tags = req.body.post_tags;
+    my_tags = my_tags.split(" ")
     let newPost = new Post({
         post_title: req.body.post_title,
         post_author: req.body.post_author,
         post_content: req.body.post_content,
         post_tags: req.body.post_tags,
-        post_id: req.body.post_id
+        post_id: req.body.post_id,
+        list_tags: my_tags
          });
+    var i;
+    for(i = 0; i < my_tags.length; i++)
+    {
+        let newTag = new Tag({
+            name: my_tags[i],
+            count: 1
+        })
+        newTag.save().catch(error=>console.log(error))
+    }
     newPost.save()
         .then(() => {
             res.json({message: "success"});
