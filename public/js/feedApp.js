@@ -13,7 +13,7 @@ var feedApp = new Vue({
     },
    mounted: function () {
             const self = this;
-            fetch('http://localhost:3000/posts')
+            fetch('/posts')
                 .then(
                     function(response) {
                         if (response.status !== 200) {
