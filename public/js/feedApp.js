@@ -52,6 +52,13 @@ var feedApp = new Vue({
             self.pid = pid;
             const data = { "post_title": posttitle, "post_author":postauthor,"post_content":postcontent,"post_id":pid  ,"post_tags":self.posttags};
 
+            fetch('/tags', {
+                method: 'POST', // or 'PUT'
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)}) .then(response => response.json())
+
             fetch('/posts', {
                 method: 'POST', // or 'PUT'
                 headers: {
@@ -59,6 +66,7 @@ var feedApp = new Vue({
                 },
                 body: JSON.stringify(data),
             })
+
                 .then(response => response.json())
                 .then(data => {
                     console.log('Success:', data);

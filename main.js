@@ -5,6 +5,7 @@ homecontroller = require("./controllers/homeController");
 errorController = require("./controllers/errorController");
 usersController = require("./controllers/usersController");
 feedController = require("./controllers/feedController");
+tagController =require("./controllers/tagController");
 router = express.Router();
 
 methodOverride = require("method-override");
@@ -76,6 +77,8 @@ app.get("/security", usersController.getSecurityPage);
 app.get("/search", homecontroller.showSearchPage);
 app.post("/subscribe", usersController.saveUser);
 
+app.post("/tags",tagController.saveTag);
+app.get("/tags", tagController.listTrendingTags);
 
 app.get("/posts", feedController.getAllPosts);
 app.post("/posts",feedController.savePost);

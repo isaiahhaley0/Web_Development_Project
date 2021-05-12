@@ -34,5 +34,7 @@ exports.savePost = (req, res) => {
         .then(() => {
             res.json({message: "success"});
         })
-        .catch(error => {res.send(error)})
+        .catch(error => {res.send(error)}).then(()=>{
+
+    })
 };
