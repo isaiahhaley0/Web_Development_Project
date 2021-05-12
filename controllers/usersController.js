@@ -135,7 +135,7 @@ exports.create = (req, res, next) => {
 };
 
 exports.login = (req, res) => {
-    res.render("/login");
+    res.render("login");
 };
   
 exports.authenticate = (req, res, next) => {
@@ -150,7 +150,7 @@ exports.authenticate = (req, res, next) => {
             next();
         } else {
         req.flash("error", "Your account or password is incorrect.Please try again or contact your system administrator!");
-        res.locals.redirect = "/users/login";
+        res.locals.redirect = "login";
         next();
         }
     })
@@ -161,7 +161,7 @@ exports.authenticate = (req, res, next) => {
 };
 
 exports.redirectView = (req, res, next) => {
-    let redirectPath = "/login";
+    let redirectPath = "login";
     if(redirectPath != undefined)res.redirect(redirectPath);
     else next();
 };
