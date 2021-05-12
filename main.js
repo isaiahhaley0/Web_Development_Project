@@ -8,13 +8,14 @@ methodOverride = require("method-override");
 layouts = require("express-ejs-layouts");
 mongoose = require("mongoose");
 passport = require("passport"),
-    cors = require("cors")
+    cors = require("cors"),
     cookieParser = require("cookie-parser"),
     expressSession = require("express-session"),
     expressValidator = require("express-validator"),
     connectFlash = require("connect-flash"),
     User = require("./models/user");
-
+    Posts = require("./models/posts");
+app.use(cors());
 router.use(cookieParser("secret_passcode"));
 router.use(expressSession({
     secret: "impossiblePassword",
@@ -40,7 +41,7 @@ router.use((req, res, next) => {
 
 mongoose.connect(process.env.MONGO_URI || "mongodb://localhost:27017/vibez_db",{useNewUrlParser: true, useUnifiedTopology: true })
 
-app.use(cors())
+
 app.set("port",process.env.PORT||3000);
 
 app.set("view engine", "ejs");
