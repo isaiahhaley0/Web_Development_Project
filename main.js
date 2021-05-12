@@ -8,6 +8,7 @@ methodOverride = require("method-override");
 layouts = require("express-ejs-layouts");
 mongoose = require("mongoose");
 passport = require("passport"),
+    cors = require("cors")
     cookieParser = require("cookie-parser"),
     expressSession = require("express-session"),
     expressValidator = require("express-validator"),
@@ -54,14 +55,14 @@ app.use(
     })
 );
 app.use(express.json());
-
+app.post("/", homecontroller.showIndex);
 app.get("/users", usersController.getAllUsers);
 app.get("/signup", usersController.getUsersPage);
 app.get("/login",homecontroller.showLogIn);
 app.get("/security", usersController.getSecurityPage);
 app.get("/search", homecontroller.showSearchPage);
 app.post("/subscribe", usersController.saveUser);
-app.post("/", homecontroller.showIndex);
+
 app.post("/login", homecontroller.LogIn);
 app.get("/posts", feedController.getAllPosts);
 app.post("/posts",feedController.savePost);
