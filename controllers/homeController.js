@@ -5,7 +5,7 @@ const User = require("../models/user");
 
 
 exports.showIndex = (req,res) =>{
-    res.render("home")
+    res.render("home", {layout: 'layout'})
 }
 
 exports.showSignUp = (req,res) =>{

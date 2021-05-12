@@ -19,18 +19,20 @@ app.use(cors())
     connectFlash = require("connect-flash"),
     User = require("./models/user");
     Posts = require("./models/posts");
+app.use(connectFlash());
 
-
-router.use(cookieParser("secret_passcode"));
-router.use(expressSession({
+app.use(cookieParser("secret_passcode"));
+app.use(expressSession({
     secret: "impossiblePassword",
     cookie: {
         maxAge: 4000000
     },
+
     resave: false,
     saveUninitialized: false
 }));
 router.use(connectFlash());
+
 router.use((req, res, next) => {
     res.locals.flashMessages = req.flash();
     next();
@@ -56,7 +58,7 @@ app.set("port",process.env.PORT||3000);
 
 app.set("view engine", "ejs");
 
-app.set('layout', 'layout', 'navlessLayout');
+app.set(layouts, 'layout', 'navlessLayout');
 app.use(layouts);
 
 app.get("/",homecontroller.showIndex) ;
@@ -69,6 +71,8 @@ app.use(
 app.use(express.json());
 app.post("/", homecontroller.showIndex);
 app.get("/users", usersController.getAllUsers);
+app.get("/users/:id", usersController.getMyProfile);
+
 app.get("/signup", usersController.getUsersPage);
 app.post("/signup", usersController.validate);
 app.get("/login",usersController.login);

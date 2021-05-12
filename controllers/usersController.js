@@ -42,9 +42,11 @@ exports.saveUser = (req, res) => {
     .catch(error => {res.send(error)})
 };
 exports.getMyProfile = (req,res) =>{
-    var email = decodeURIComponent(req.headers.cookie).split("=")[1];
-    User.findOne({email:email}).then(function(doc){
-        res.render("users/show",{usr:doc} );
+    
+
+    var myId = req.params.id;
+    User.findById(myId).then(function(doc){
+        res.render("users/show",{layout: 'layout',usr:doc} );
     });
 
 };
@@ -145,8 +147,9 @@ exports.authenticate = (req, res, next) => {
         .then(user => {
             if (user && user.password === req.body.password){
             res.locals.redirect = `/users/${user._id}`;
-            req.flash("success", `${user.fullName}'s logged in successfully!`);
+            req.flash("success", `${user.name}'s logged in successfully!`);
             res.locals.user = user;
+            res.cookie('email',req.body.email)
             next();
         } else {
         req.flash("error", "Your account or password is incorrect.Please try again or contact your system administrator!");
@@ -161,7 +164,7 @@ exports.authenticate = (req, res, next) => {
 };
 
 exports.redirectView = (req, res, next) => {
-    let redirectPath = "login";
+    let redirectPath = res.locals.redirect;
     if(redirectPath != undefined)res.redirect(redirectPath);
     else next();
 };
