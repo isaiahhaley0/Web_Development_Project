@@ -14,7 +14,7 @@ passport = require("passport"),
     expressValidator = require("express-validator"),
     connectFlash = require("connect-flash"),
     User = require("./models/user");
-
+app.use(cors());
 router.use(cookieParser("secret_passcode"));
 router.use(expressSession({
     secret: "impossiblePassword",
@@ -40,7 +40,7 @@ router.use((req, res, next) => {
 
 mongoose.connect(process.env.MONGO_URI || "mongodb://localhost:27017/vibez_db",{useNewUrlParser: true, useUnifiedTopology: true })
 
-app.use(cors());
+
 app.set("port",process.env.PORT||3000);
 
 app.set("view engine", "ejs");
