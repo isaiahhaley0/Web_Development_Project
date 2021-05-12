@@ -138,25 +138,25 @@ exports.login = (req, res) => {
   },
   
 exports.authenticate = (req, res, next) => {
-User.findOne({
-    email: req.body.email
-})
-    .then(user => {
-        if (user && user.password === req.body.password){
-        res.locals.redirect = `/users/${user._id}`;
-        req.flash("success", `${user.fullName}'s logged in successfully!`);
-        res.locals.user = user;
+    User.findOne({
+        email: req.body.email
+    })
+        .then(user => {
+            if (user && user.password === req.body.password){
+            res.locals.redirect = `/users/${user._id}`;
+            req.flash("success", `${user.fullName}'s logged in successfully!`);
+            res.locals.user = user;
+            next();
+        } else {
+        req.flash("error", "Your account or password is incorrect.Please try again or contact your system administrator!");
+        res.locals.redirect = "/users/login";
         next();
-    } else {
-    req.flash("error", "Your account or password is incorrect.Please try again or contact your system administrator!");
-    res.locals.redirect = "/users/login";
-    next();
-    }
-})
-    .catch(error => {
-        console.log(`Error logging in user: ${error.message}`);
-        next(error);
-    });
+        }
+    })
+        .catch(error => {
+            console.log(`Error logging in user: ${error.message}`);
+            next(error);
+        });
 };
 exports.redirectView = (req, res, next) => {
     let redirectPath = "/login";
