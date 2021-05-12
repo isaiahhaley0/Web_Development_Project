@@ -18,7 +18,7 @@ passport = require("passport"),
     User = require("./models/user");
     Posts = require("./models/posts");
 var cors = require('cors')
-app.use(cors())
+router.use(cors())
 
 router.use(cookieParser("secret_passcode"));
 router.use(expressSession({
