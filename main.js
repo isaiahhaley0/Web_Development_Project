@@ -40,7 +40,7 @@ router.use((req, res, next) => {
 
 mongoose.connect(process.env.MONGO_URI || "mongodb://localhost:27017/vibez_db",{useNewUrlParser: true, useUnifiedTopology: true })
 
-app.use(cors())
+app.use(cors());
 app.set("port",process.env.PORT||3000);
 
 app.set("view engine", "ejs");
