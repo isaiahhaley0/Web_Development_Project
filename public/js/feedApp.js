@@ -47,7 +47,7 @@ var feedApp = new Vue({
             var posttitle = self.posttitle;
             var postauthor =  decodeURIComponent(temp);
             var postcontent = self.postcontent;
-            var pid = Math.floor(Math.random() * 100000);
+            var pid = 1;
             self.pid = pid;
             const data = { "post_title": posttitle, "post_author":postauthor,"post_content":postcontent,"post_id":pid  };
 
