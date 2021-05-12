@@ -37,7 +37,7 @@ router.use((req, res, next) => {
 });
 
 
-mongoose.connect(process.env.MONGO_URI,{useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGO_URI || "mongodb://localhost:27017/vibez_db",{useNewUrlParser: true, useUnifiedTopology: true })
 
 app.set("port",process.env.PORT||3000);
 
