@@ -133,9 +133,10 @@ exports.create = (req, res, next) => {
       next();
     });
 };
+
 exports.login = (req, res) => {
     res.render("/login");
-  },
+};
   
 exports.authenticate = (req, res, next) => {
     User.findOne({
@@ -158,8 +159,9 @@ exports.authenticate = (req, res, next) => {
             next(error);
         });
 };
+
 exports.redirectView = (req, res, next) => {
     let redirectPath = "/login";
     if(redirectPath != undefined)res.redirect(redirectPath);
     else next();
-}
+};
