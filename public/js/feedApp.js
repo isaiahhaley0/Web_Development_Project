@@ -8,6 +8,7 @@ var feedApp = new Vue({
         posttitle:"",
         postauthor:"tempauthor",
         postcontent:"",
+        posttags:"",
         pid:0,
         posts: []
     },
@@ -49,7 +50,7 @@ var feedApp = new Vue({
             var postcontent = self.postcontent;
             var pid = 1;
             self.pid = pid;
-            const data = { "post_title": posttitle, "post_author":postauthor,"post_content":postcontent,"post_id":pid  };
+            const data = { "post_title": posttitle, "post_author":postauthor,"post_content":postcontent,"post_id":pid  ,"post_tags":self.posttags};
 
             fetch('/posts', {
                 method: 'POST', // or 'PUT'

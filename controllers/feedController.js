@@ -23,6 +23,7 @@ exports.savePost = (req, res) => {
         post_title: req.body.post_title,
         post_author: req.body.post_author,
         post_content: req.body.post_content,
+        post_tags: req.body.post_tags,
         post_id: req.body.post_id
          });
     newPost.save()

@@ -5,6 +5,7 @@ const mongoose = require("mongoose"),
         post_title: {type:String, required: true},
         post_author: {type:String, required: true},
         post_content: {type:String, required: true},
+        post_tags: {type:String},
         post_id:{type:Number,required:true}
 
     });
