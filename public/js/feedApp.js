@@ -37,7 +37,6 @@ var feedApp = new Vue({
 
    },
    methods:{
-
         submitPost: function (event){
             var self = this;
             var temp =  document.cookie
