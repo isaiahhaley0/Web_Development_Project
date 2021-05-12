@@ -1,5 +1,5 @@
 const Post = require("../models/posts");
-
+cors = require("cors")
 exports.getAllPosts = (req, res) => {
     Post.find({})
         .exec()
