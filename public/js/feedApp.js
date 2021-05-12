@@ -51,13 +51,8 @@ var feedApp = new Vue({
             var pid = 1;
             self.pid = pid;
             const data = { "post_title": posttitle, "post_author":postauthor,"post_content":postcontent,"post_id":pid  ,"post_tags":self.posttags};
+            var refid;
 
-            fetch('/tags', {
-                method: 'POST', // or 'PUT'
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data)}) .then(response => response.json())
 
             fetch('/posts', {
                 method: 'POST', // or 'PUT'
@@ -69,13 +64,21 @@ var feedApp = new Vue({
 
                 .then(response => response.json())
                 .then(data => {
+                    refid = data.post_id;
+                    console.log(data.post_id)
                     console.log('Success:', data);
                     window.location.reload()
                 })
                 .catch((error) => {
                     console.error('Error:', error);
                 });
-
+            const tagData = {"post_tags":self.posttags,"post_ref":refid}
+            fetch('/tags', {
+                method: 'POST', // or 'PUT'
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(tagData)}) .then(response => response.json())
         }
    }
 })

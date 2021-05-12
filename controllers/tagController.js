@@ -1,7 +1,9 @@
 const Tag = require("../models/tag")
-
+const Post = require("../models/posts");
+mongoose = require("mongoose");
 exports.saveTag = (req, res) => {
     var my_tags = req.body.post_tags;
+    var my_id =req.body.post_ref;
     my_tags = my_tags.split(" ");
     var temp ;
     for(temp=0; temp < my_tags.length; temp++)
@@ -12,10 +14,15 @@ exports.saveTag = (req, res) => {
             {
                 $inc:{
                     count:1
+                },
+                $push:{
+                    posts: mongoose.Types.ObjectId(my_id)
                 }
             }
-            Tag.updateOne(filter,updateDoc,options).exec().catch(()=>{
-                console.log("Success")
+            Tag.updateOne(filter,updateDoc,options).exec(
+
+            ).catch(error=>{
+                console.log(error)
             });
     }
 

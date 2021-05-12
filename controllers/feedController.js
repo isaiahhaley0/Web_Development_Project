@@ -29,10 +29,14 @@ exports.savePost = (req, res) => {
         post_id: req.body.post_id,
         list_tags: my_tags
          });
-
+    var pid = newPost._id;
+    console.log(pid);
     newPost.save()
         .then(() => {
-            res.json({message: "success"});
+            res.json({
+                message: "success",
+                post_id: pid
+            });
         })
         .catch(error => {res.send(error)}).then(()=>{
 

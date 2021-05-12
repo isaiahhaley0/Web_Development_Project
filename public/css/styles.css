@@ -274,6 +274,7 @@ ul {
      padding: 5px;
      border: 2px solid #a75fc2;
      width: available;
+     margin: 3px;
  }
 .post_content{
     font-size: 16px;
