@@ -26,7 +26,7 @@ exports.listTrendingTags = (req, res)=>{
     const options = {
         count:-1
     }
-    Tag.find({}).sort(options)
+    Tag.find({}).sort(options).limit(20)
         .exec()
         .then(posts => {
             res.json(posts)
