@@ -113,7 +113,7 @@ exports.validate = (req, res, next) => {
         else next();
     });
 };
-module.create = (req, res, next) => {
+exports.create = (req, res, next) => {
     let newUser = new User;
   User.create(newUser)
     .then(user => {
@@ -133,11 +133,11 @@ module.create = (req, res, next) => {
       next();
     });
 };
-module.login = (req, res) => {
+exports.login = (req, res) => {
     res.render("/login");
   },
   
-module.authenticate = (req, res, next) => {
+exports.authenticate = (req, res, next) => {
 User.findOne({
     email: req.body.email
 })
@@ -158,7 +158,7 @@ User.findOne({
         next(error);
     });
 };
-module.redirectView = (req, res, next) => {
+exports.redirectView = (req, res, next) => {
     let redirectPath = "/login";
     if(redirectPath != undefined)res.redirect(redirectPath);
     else next();
