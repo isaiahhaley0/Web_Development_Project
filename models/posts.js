@@ -1,3 +1,5 @@
+"use strict";
+
 const mongoose = require("mongoose"),
     postSchema = mongoose.Schema({
         post_title: {type:String, required: true},
