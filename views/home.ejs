@@ -35,11 +35,13 @@
                                 <h5 class="post_title">{{post.post_title}}</h5>
                                 <p class="card-text">{{post.post_author}}</p>
                                 <p class="card-text">{{post.post_content}}</p>
-                                <ul class="post_footer">
-                                    <li v-for="item in post.list_tags" class="card-footer">
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                    <div v-for="item in post.list_tags" class="col-md-auto">
                                         {{item}}
-                                    </li>
-                                </ul>
+                                    </div>
+                                    </div>
+                                </div>
                                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                             </div>
                         </div>

@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d96f175-6685-4fc8-9440-90becd296a2e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/models/tag.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/tagController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/feedController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/feedController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/posts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/home.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/home.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +113,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/controllers/feedController.js</url>
-          <line>40</line>
+          <line>32</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -178,10 +177,10 @@
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/controllers/feedController.js</url>
-          <line>23</line>
+          <url>file://$PROJECT_DIR$/controllers/tagController.js</url>
+          <line>5</line>
           <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="31" />
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

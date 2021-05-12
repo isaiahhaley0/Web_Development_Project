@@ -29,15 +29,7 @@ exports.savePost = (req, res) => {
         post_id: req.body.post_id,
         list_tags: my_tags
          });
-    var i;
-    for(i = 0; i < my_tags.length; i++)
-    {
-        let newTag = new Tag({
-            name: my_tags[i],
-            count: 1
-        })
-        newTag.save().catch(error=>console.log(error))
-    }
+
     newPost.save()
         .then(() => {
             res.json({message: "success"});
