@@ -1,3 +1,4 @@
+const { use } = require('passport');
 
 const express = require('express'), app = express();
 homecontroller = require("./controllers/homeController");
@@ -69,7 +70,7 @@ app.post("/posts",feedController.savePost);
 
 app.get("/users", usersController.getAllUsers);
 app.get("/signup", usersController.getUsersPage);
-app.post("/signup", usersController.validate);
+app.post("/signup", usersController.validate, usersController.create);
 app.get("/login",homecontroller.showLogIn);
 app.get("/security", usersController.getSecurityPage);
 app.get("/search", homecontroller.showSearchPage);
