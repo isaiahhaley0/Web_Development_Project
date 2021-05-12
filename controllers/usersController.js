@@ -90,3 +90,26 @@ exports.deleteAccount = (req,res)=>
 {
     res.render("users/delete");
 };
+
+exports.validate = (req, res, next) => {
+    req.sanitizeBody("email").normalizeEmail({
+        all_lowercase: true
+    }).trim();
+    req.check("email", "email is not valid!").isEmail();
+    // req.check("zipCode", "Zip Code is not valid!").notEmpty().isInt().isLength({
+    //     min: 5,
+    //     max: 5
+    // });
+    req.check("password", "Password can not be empty").notEmpty();
+
+    req.getValidationResult().then((error) => {
+        if(!error.isEmpty()) {
+            let messages = error.array().map (e => e.msg);
+            req.flash("error", messages.join(" and "));
+            req.skip = true;
+            res.locals.redirect = "/users/new";
+            next();
+        }
+        else next();
+    });
+};

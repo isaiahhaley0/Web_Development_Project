@@ -65,6 +65,7 @@ app.use(express.json());
 app.post("/", homecontroller.showIndex);
 app.get("/users", usersController.getAllUsers);
 app.get("/signup", usersController.getUsersPage);
+app.post("/signup", usersController.validate);
 app.get("/login",homecontroller.showLogIn);
 app.get("/security", usersController.getSecurityPage);
 app.get("/search", homecontroller.showSearchPage);
