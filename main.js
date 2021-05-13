@@ -73,6 +73,8 @@ app.post("/", homecontroller.showIndex);
 app.get("/users", usersController.getAllUsers);
 app.get("/users/:id", usersController.getMyProfile);
 
+app.put("/follow/:targetid", usersController.followUser)
+
 app.get("/signup", usersController.getUsersPage);
 app.post("/signup", usersController.validate);
 app.get("/login",usersController.login);

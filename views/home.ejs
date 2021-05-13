@@ -22,28 +22,29 @@
                 </div>
             </div>
             <template >
-                <div v-for = "post in posts" v-bind:key= 'post._id' class="card mb-3" v-bind:id='post._id'>
+                <div v-for = "post in posts" v-bind:key= 'post._id' class="card mb-3" v-bind:id='post.post_author'>
                     <div  class="row no-gutters card-body">
 
-                        <div class="col-md-8">
+                        <div class="col-md-8 justify-content-center">
 
-                                <h5 class="post_title">{{post.post_title}}</h5>
-                                <p class="card-text">{{post.post_author}}</p>
-                                <p class="card-text post_content">{{post.post_content}}</p>
-                                <div class="container">
-                                    <div class="row justify-content-center">
-                                    <div v-for="item in post.list_tags" class="col-md-auto post_tag">
-                                        {{item}}
-                                    </div>
-                                    </div>
-                                </div>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <p class="post_title">{{post.post_title}}</p>
+                                <p class="post_author">{{post.post_author}}</p>
+                                <p class="post_content">{{post.post_content}}</p>
 
-                                <button v-bind:id='post.post_author' class="p" v-on:click="followUser">follow poster</button>
+
+
+
 
                         </div>
+                        <div class="post_footer">
 
+                                    <span v-for="item in post.list_tags" class="col-md-auto post_tag">
+                                        {{item}}
+                                    </span>
+
+                        </div>
                     </div>
+                    <button v-bind:id='post.post_author' class="followbutton" v-on:click="followUser($event)">follow poster</button>
                 </div>
             </template>
              </div>

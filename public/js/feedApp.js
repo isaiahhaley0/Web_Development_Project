@@ -40,6 +40,26 @@ var feedApp = new Vue({
    methods:{
         followUser: function (event){
 
+                targetId = event.currentTarget.id;
+                console.log(targetId);
+            const putMethod = {
+                method: 'PUT', // Method itself
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8' // Indicates the content
+                },
+                body: JSON.stringify(
+                    {
+                        "id":targetId
+                    }
+                ) // We send data in JSON format
+            }
+            var url = '/follow';
+// make the HTTP put request using fetch api
+            fetch(url, putMethod)
+                .then(response => response.json())
+                .then(data => console.log(data)) // Manipulate the data retrieved back, if we want to do something with it
+                .catch(err => console.log(err)) // Do something with the error
+
         },
         submitPost: function (event){
             var self = this;

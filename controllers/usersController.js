@@ -42,6 +42,14 @@ exports.saveUser = (req, res) => {
     })
     .catch(error => {res.send(error)})
 };
+
+exports.followUser = (req, res) => {
+    console.log(req.body.id);
+    console.log(req.cookies.id);
+
+}
+
+
 exports.getMyProfile = (req,res) =>{
 
 

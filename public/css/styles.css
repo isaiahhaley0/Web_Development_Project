@@ -218,7 +218,15 @@ ul {
    
 }
 
+.followbutton{
+    border-radius: 5px;
+    border:5px solid lightcoral;
+    padding: 10px;
+    text-align: center;
 
+
+    position: relative;
+}
 
 .post{
     border-radius: 5px;
@@ -241,8 +249,13 @@ ul {
   margin-right: 0%;
 }
 .post_title{
-    position: relative;
+    font-size: 16px;
+    font-family: sans-serif;
+    background-color: transparent;
+    width: inherit;
     text-align: center;
+    padding: 8px;
+    height: auto;
 }
 
 .delete_link{
@@ -273,11 +286,22 @@ ul {
     align-content: center;
 }
 .post_tag{
+    font-size: 16px;
+    font-family: sans-serif;
     background-color: transparent;
-    color: grey;
+    width: inherit;
+    text-align: center;
+    padding: 8px;
+    height: auto;
 }
  .post_footer{
+     font-size: 16px;
+     font-family: sans-serif;
      background-color: transparent;
+     width: inherit;
+     text-align: center;
+     padding: 8px;
+     height: auto;
  }
  .trending_tag{
      background-color:black;
@@ -289,8 +313,17 @@ ul {
 .post_content{
     font-size: 16px;
     font-family: sans-serif;
-   
-    width: 100%;
+    background-color: transparent;
+    width: inherit;
+    text-align: center;
+    padding: 8px;
+    height: auto;
+}
+.post_author{
+    font-size: 16px;
+    font-family: sans-serif;
+    background-color: transparent;
+    width: inherit;
     text-align: center;
     padding: 8px;
     height: auto;
