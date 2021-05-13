@@ -41,6 +41,13 @@ var feedApp = new Vue({
         followUser: function (event){
 
                 targetId = event.currentTarget.id;
+                var usrbuttons = document.getElementsByClassName(targetId)
+                console.log(usrbuttons)
+                var i;
+                for(i = 0; i < usrbuttons.length;i++)
+                {
+                    usrbuttons[i].classList.add("disabled")
+                }
                 console.log(targetId);
             const putMethod = {
                 method: 'PUT', // Method itself

@@ -20,7 +20,7 @@
                 </div>
             </div>
             <template >
-                <div v-for = "post in posts" v-bind:key= 'post._id' class="card mb-3" v-bind:id='post.post_author'>
+                <div v-for = "post in posts" v-bind:key= 'post._id' class="card mb-3 transparent">
                     <div  class="row no-gutters card-body">
 
                         <div class="col-md-8 justify-content-center">
@@ -37,7 +37,7 @@
 
                         </div>
                     </div>
-                    <button v-bind:id='post.post_author' class="followbutton" v-on:click="followUser($event)">follow poster</button>
+                    <button v-bind:id='post.post_author' v-bind:class='post.post_author' class="followbutton" v-on:click="followUser($event)">follow poster</button>
                 </div>
             </template>
              </div>
@@ -50,7 +50,7 @@
         <template v-for = "tag in tags">
             <div class="trending_tag">
 
-                <a :href="`/tags/${tag._id}`">
+                <a :href="`/tags/${tag._id}`" class=" lc">
                     {{tag.name}}</a>
             </div>
 

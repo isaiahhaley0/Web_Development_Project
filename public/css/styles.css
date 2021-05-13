@@ -32,7 +32,14 @@ textarea {
   resize: both;
   overflow: auto;
 }
-
+.disabled{
+    visibility: hidden;
+    background: transparent;
+    color: black;
+}
+.transparent{
+    background-color: transparent;
+}
 .betterlink{
   z-index: 100;
   margin: 0%;
@@ -312,11 +319,12 @@ textarea[type=text] {
     align-content: center;
 }
 .post_tag{
-    font-size: 16px;
+    font-size: 8px;
     font-family: sans-serif;
     background-color: transparent;
     width: inherit;
     text-align: center;
+    color:dimgrey;
     padding: 8px;
     height: auto;
 }
@@ -331,10 +339,15 @@ textarea[type=text] {
  }
  .trending_tag{
      background-color:black;
+     text-align: center;
+     border-radius: 5px;
      padding: 5px;
      border: 2px solid #a75fc2;
      width: available;
      margin: 3px;
+ }
+ .lc{
+     color: purple;
  }
 .post_content{
     font-size: 16px;
@@ -346,12 +359,13 @@ textarea[type=text] {
     height: auto;
 }
 .post_author{
-    font-size: 16px;
+    font-size: 12px;
     font-family: sans-serif;
     background-color: transparent;
     width: inherit;
     text-align: center;
-    padding: 8px;
+    color: dimgrey;
+
     height: auto;
 }
 .navitem{

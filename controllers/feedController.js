@@ -54,6 +54,16 @@ exports.getMyPosts = (req,res)=>{
             console.log("promise complete");
         })
 }
+
+exports.deletePost = (req, res) => {
+    console.log(req.body.id)
+    Post.findByIdAndRemove(req.body.id).then(()=>
+    {
+        console.log(req.body.id)
+
+    })
+}
+
 exports.savePost = (req, res) => {
     var my_tags = req.body.post_tags;
     my_tags = my_tags.split(" ")

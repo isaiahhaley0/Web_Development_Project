@@ -74,6 +74,7 @@ app.get("/users", usersController.getAllUsers);
 app.get("/users/:id", usersController.getProfile);
 
 app.put("/follow", usersController.followUser)
+app.delete("/follow", usersController.unfollowUser)
 
 app.get("/signup", usersController.getUsersPage);
 app.post("/signup", usersController.validate);
@@ -87,6 +88,7 @@ app.post("/tags",tagController.saveTag);
 app.get("/tags", tagController.listTrendingTags);
 app.get('/tags/:id', tagController.listPostByTag);
 app.get("/posts", feedController.getAllPosts);
+app.delete("/posts", feedController.deletePost);
 
 app.get("/myposts", feedController.getMyPosts);
 app.get("/messages", feedController.loadMessages);

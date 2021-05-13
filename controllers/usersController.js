@@ -68,6 +68,25 @@ exports.followUser = (req, res) => {
 
     res.send( )//avoids 404's
 }
+exports.unfollowUser = (req, res) => {
+    console.log(req.body.id);
+    console.log(req.cookies.id);
+    const filter = { _id:req.cookies.id}
+    const options = {upsert: false}
+    const updateDoc =
+        {
+            $pull:{
+                followers: req.body.id
+            }
+        }
+    User.updateOne(filter,updateDoc,options).exec(
+
+    ).catch(error=>{
+        console.log(error)
+    });
+
+    res.send( )//avoids 404's
+}
 
 exports.getProfile = (req,res) =>{
 

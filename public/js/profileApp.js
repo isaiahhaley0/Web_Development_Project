@@ -36,12 +36,12 @@ var feedApp = new Vue({
 
     },
     methods:{
-        followUser: function (event){
+        deletePost: function (event){
 
             targetId = event.currentTarget.id;
             console.log(targetId);
             const putMethod = {
-                method: 'PUT', // Method itself
+                method: 'DELETE', // Method itself
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8' // Indicates the content
                 },
@@ -51,13 +51,13 @@ var feedApp = new Vue({
                     }
                 ) // We send data in JSON format
             }
-            var url = '/follow';
+            var url = '/posts';
 // make the HTTP put request using fetch api
             fetch(url, putMethod)
                 .then(response => response.json())
                 .then(data => console.log(data)) // Manipulate the data retrieved back, if we want to do something with it
                 .catch(err => console.log(err)) // Do something with the error
-
+            window.location.reload()
         },
         submitPost: function (event){
             var self = this;
