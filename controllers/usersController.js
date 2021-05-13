@@ -1,7 +1,6 @@
 "use strict";
 const passport = require("passport");
 const User = require("../models/user");
-var cookieParser = require('cookie-parser')
 
 exports.getAllUsers = (req, res) => {
     User.find({})
@@ -43,13 +42,10 @@ exports.saveUser = (req, res) => {
     .catch(error => {res.send(error)})
 };
 exports.getMyProfile = (req,res) =>{
-
+    
 
     var myId = req.params.id;
-    myId = req.cookies.id;
     User.findById(myId).then(function(doc){
-        res.cookie('email',doc.email)
-        res.cookie('id',myId)
         res.render("users/show",{layout: 'layout',usr:doc} );
     });
 
