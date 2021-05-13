@@ -6,8 +6,8 @@
             <div  class="card mb-3">
                 <div class="row no-gutters">
 
-                    <div class="col-md-8">
-                        <div class="card-body">
+
+                        <div class="col-md-8 card-body">
 
                                 <input v-model="posttitle" placeholder="Post Title" type="text" id="postTitle" name="postTitle">
 
@@ -17,21 +17,19 @@
                                 <button v-on:click="submitPost" class ="postbutton col-md-6">Post</button>
 
                         </div>
-                    </div>
+
 
                 </div>
             </div>
-            <template v-for = "post in posts">
-                <div  class="card mb-3">
-                    <div class="row no-gutters">
-                        <div class="col-md-4">
+            <template >
+                <div v-for = "post in posts" v-bind:key= 'post._id' class="card mb-3" v-bind:id='post._id'>
+                    <div  class="row no-gutters card-body">
 
-                        </div>
                         <div class="col-md-8">
-                            <div class="card-body">
+
                                 <h5 class="post_title">{{post.post_title}}</h5>
                                 <p class="card-text">{{post.post_author}}</p>
-                                <p class="card-text">{{post.post_content}}</p>
+                                <p class="card-text post_content">{{post.post_content}}</p>
                                 <div class="container">
                                     <div class="row justify-content-center">
                                     <div v-for="item in post.list_tags" class="col-md-auto post_tag">
@@ -40,7 +38,9 @@
                                     </div>
                                 </div>
                                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
+
+                                <button v-bind:id='post.post_author' class="p" v-on:click="followUser">follow poster</button>
+
                         </div>
 
                     </div>
