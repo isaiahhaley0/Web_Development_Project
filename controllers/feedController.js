@@ -1,6 +1,7 @@
 "use strict";
 const passport = require("passport");
 const Post = require("../models/posts");
+const User = require("../models/user");
 const Tag = require("../models/tag")
 const mongoose = require("mongoose");
     exports.getAllPosts = (req, res) => {
@@ -17,6 +18,28 @@ const mongoose = require("mongoose");
             console.log("promise complete");
         })
 };
+
+
+exports.getPostsByFollow= (req,res)=>{
+
+
+    User.findById(req.cookies.id).exec().then(tgs => {
+            console.log(tgs.followers)
+            Post.find({post_author: tgs.followers}).exec().then(result =>{
+                console.log(result)
+                res.json(result)
+            })
+        }
+    )
+}
+
+exports.loadMessages = (req,res) =>{
+    res.render("./posts/notifications", {layout: 'layout'})
+}
+
+
+
+
 exports.getMyPosts = (req,res)=>{
     console.log(req.cookies.email)
     Post.find({post_author:req.cookies.email}).exec()

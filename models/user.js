@@ -29,7 +29,7 @@ userSchema = new Schema(
             type: String, 
             required: true
         },
-        followers: [{type: Schema.Types.ObjectId,unique: true}],
+        followers: [{type: String,unique: true}],
         subscribedAccount: {type: Schema.Types.ObjectId, ref: Subscriber}
     },
     {

@@ -48,12 +48,12 @@ exports.saveUser = (req, res) => {
 exports.followUser = (req, res) => {
     console.log(req.body.id);
     console.log(req.cookies.id);
-    const filter = { email:req.body.id}
+    const filter = { _id:req.cookies.id}
     const options = {upsert: false}
     const updateDoc =
         {
             $push:{
-                followers: mongoose.Types.ObjectId(req.cookies.id)
+                followers: req.body.id
             }
         }
     User.updateOne(filter,updateDoc,options).exec(
@@ -61,7 +61,7 @@ exports.followUser = (req, res) => {
     ).catch(error=>{
         console.log(error)
     });
-    User.findOneAndUpdate({email:req.body.id})
+
     res.send( )//avoids 404's
 }
 
