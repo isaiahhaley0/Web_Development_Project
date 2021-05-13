@@ -21,7 +21,10 @@ exports.getAllUsers = (req, res) => {
 };
 exports.deleteUser = (req,res)=>{
     var data = req.cookies.email;
-    User.findOneAndRemove({email:data}).then(res.redirect('/'));
+    User.findOneAndRemove({email:data}).exec().then(()=>{
+        res.cookie('id','')
+        res.cookie('email','')
+        res.render('login')});
 
 }
 exports.getUsersPage = (req, res) => {
