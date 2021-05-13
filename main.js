@@ -87,6 +87,10 @@ app.post("/tags",tagController.saveTag);
 app.get("/tags", tagController.listTrendingTags);
 app.get('/tags/:id', tagController.listPostByTag);
 app.get("/posts", feedController.getAllPosts);
+
+app.get("/myposts", feedController.getMyPosts);
+
+
 app.post("/posts",feedController.savePost);
 app.get("/myProfile",usersController.getMyProfile);
 app.get("/editProfile",usersController.editProfile);

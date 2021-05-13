@@ -1,7 +1,5 @@
-
-
 var feedApp = new Vue({
-    el: '#feedApp',
+    el: '#profileApp',
     data: {
         message: 'Hello Vue!',
         message: 'Hello Vue!',
@@ -12,36 +10,36 @@ var feedApp = new Vue({
         pid:0,
         posts: []
     },
-   mounted: function () {
-            const self = this;
-            fetch('/posts')
-                .then(
-                    function(response) {
-                        if (response.status !== 200) {
-                            console.log('Looks like there was a problem. Status Code: ' +
-                                response.status);
-                            return;
-                        }
-
-                        // Examine the text in the response
-                        response.json().then(function(data) {
-
-                            self.posts = data.reverse();
-                            console.log(data);
-
-                        });
+    mounted: function () {
+        const self = this;
+        fetch('/myposts')
+            .then(
+                function(response) {
+                    if (response.status !== 200) {
+                        console.log('Looks like there was a problem. Status Code: ' +
+                            response.status);
+                        return;
                     }
-                )
-                .catch(function(err) {
-                    console.log('Fetch Error :-S', err);
-                });
 
-   },
-   methods:{
+                    // Examine the text in the response
+                    response.json().then(function(data) {
+
+                        self.posts = data.reverse();
+                        console.log(data);
+
+                    });
+                }
+            )
+            .catch(function(err) {
+                console.log('Fetch Error :-S', err);
+            });
+
+    },
+    methods:{
         followUser: function (event){
 
-                targetId = event.currentTarget.id;
-                console.log(targetId);
+            targetId = event.currentTarget.id;
+            console.log(targetId);
             const putMethod = {
                 method: 'PUT', // Method itself
                 headers: {
@@ -49,7 +47,7 @@ var feedApp = new Vue({
                 },
                 body: JSON.stringify(
                     {
-                       id:targetId
+                        id:targetId
                     }
                 ) // We send data in JSON format
             }
@@ -104,5 +102,5 @@ var feedApp = new Vue({
                 },
                 body: JSON.stringify(tagData)}) .then(response => response.json())
         }
-   }
+    }
 })

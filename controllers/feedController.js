@@ -17,7 +17,20 @@ const mongoose = require("mongoose");
             console.log("promise complete");
         })
 };
-
+exports.getMyPosts = (req,res)=>{
+    console.log(req.cookies.email)
+    Post.find({post_author:req.cookies.email}).exec()
+        .then(posts => {
+            res.json(posts)
+        })
+        .catch((error) => {
+            console.log(error);
+            return [];
+        })
+        .then(() => {
+            console.log("promise complete");
+        })
+}
 exports.savePost = (req, res) => {
     var my_tags = req.body.post_tags;
     my_tags = my_tags.split(" ")

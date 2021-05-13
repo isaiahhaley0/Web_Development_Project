@@ -1,7 +1,9 @@
 "use strict";
 const passport = require("passport");
 const User = require("../models/user");
-var cookieParser = require('cookie-parser')
+var cookieParser = require('cookie-parser');
+let mongoose;
+mongoose = require("mongoose");
 
 exports.getAllUsers = (req, res) => {
     User.find({})
@@ -46,7 +48,21 @@ exports.saveUser = (req, res) => {
 exports.followUser = (req, res) => {
     console.log(req.body.id);
     console.log(req.cookies.id);
-    res.send("success")//avoids 404's
+    const filter = { email:req.body.id}
+    const options = {upsert: false}
+    const updateDoc =
+        {
+            $push:{
+                followers: mongoose.Types.ObjectId(req.cookies.id)
+            }
+        }
+    User.updateOne(filter,updateDoc,options).exec(
+
+    ).catch(error=>{
+        console.log(error)
+    });
+    User.findOneAndUpdate({email:req.body.id})
+    res.send( )//avoids 404's
 }
 
 
