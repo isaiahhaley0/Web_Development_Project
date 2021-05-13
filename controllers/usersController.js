@@ -46,10 +46,14 @@ exports.getMyProfile = (req,res) =>{
 
 
     var myId = req.params.id;
-    myId = req.cookies.id;
-    User.findById(myId).then(function(doc){
+    if(!myId)
+    {
+        myId = req.cookies.id;
+    }
+    User.findById(myId).exec().then(function(doc){
+        res.cookie('id',myId);
+
         res.cookie('email',doc.email)
-        res.cookie('id',myId)
         res.render("users/show",{layout: 'layout',usr:doc} );
     });
 
