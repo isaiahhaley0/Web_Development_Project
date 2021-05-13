@@ -89,7 +89,6 @@
       <workItem from="1620770723700" duration="155000" />
       <workItem from="1620771034327" duration="9300000" />
       <workItem from="1620833679357" duration="23621000" />
-      <workItem from="1620866369925" duration="823000" />
     </task>
     <servers />
   </component>
@@ -113,17 +112,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/controllers/usersController.js</url>
-          <line>72</line>
+          <line>70</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/controllers/usersController.js</url>
-          <line>61</line>
+          <line>59</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/controllers/usersController.js</url>
-          <line>60</line>
+          <line>58</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -164,18 +163,14 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/js/tagApp.js</url>
           <line>21</line>
+          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/controllers/usersController.js</url>
-          <line>153</line>
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/controllers/usersController.js</url>
-          <line>64</line>
+          <line>151</line>
           <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="39" />
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

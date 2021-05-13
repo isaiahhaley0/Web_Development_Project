@@ -51,8 +51,6 @@ exports.getMyProfile = (req,res) =>{
         res.cookie('email',doc.email)
         res.cookie('id',myId)
         res.render("users/show",{layout: 'layout',usr:doc} );
-    }).catch(err =>{
-        console.log(err)
     });
 
 };
