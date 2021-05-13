@@ -46,7 +46,7 @@ exports.saveUser = (req, res) => {
 exports.followUser = (req, res) => {
     console.log(req.body.id);
     console.log(req.cookies.id);
-
+    res.send("success")//avoids 404's
 }
 
 
