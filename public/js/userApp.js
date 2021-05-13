@@ -34,7 +34,7 @@ var currUser = new Vue({
             },
         updateUser: function (event){
             var self = this
-            const data = { "firstName": self.firstName, "lastName":self.lastName,"password":self.password,"email":self.email };
+            const data = { "firstName": self.firstName, "lastName":self.lastName};
 
             fetch('http://localhost:3000/editProfile', {
                 method: 'PUT', // or 'PUT'
@@ -46,12 +46,12 @@ var currUser = new Vue({
                 .then(response => response.json())
                 .then(data => {
                     console.log('Success:', data);
-
+                    location.href="/myProfile"
                 })
                 .catch((error) => {
                     console.error('Error:', error);
                 });
-            window.location.reload()
+            location.href="/myProfile"
         },
         deleteThisAccount: function (event){
              var self = this;

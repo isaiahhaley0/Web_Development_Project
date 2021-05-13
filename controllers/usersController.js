@@ -110,14 +110,13 @@ exports.getMyProfile = (req,res) =>{
 
 exports.editUser = (req,res)=>{
     let data = req.body;
-    let profileToUpdate  = data.email;
-    var filter ={email: profileToUpdate};
+
+    var filter ={email: req.cookies.email};
     var update={name:
     {
         first:data.firstName,
         last:data.lastName
-    },
-        password: data.password1
+    }
     }
         ;
     var option={new: true};
