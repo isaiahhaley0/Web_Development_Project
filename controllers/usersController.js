@@ -20,7 +20,7 @@ exports.getAllUsers = (req, res) => {
         })
 };
 exports.deleteUser = (req,res)=>{
-    var data = req.body.email;
+    var data = req.cookies.email;
     User.findOneAndRemove({email:data}).then(res.redirect('/'));
 
 }
@@ -40,6 +40,7 @@ exports.saveUser = (req, res) => {
     });
     newUser.save()
     .then(() => {
+
         res.render("security", {layout: 'navlessLayout'});
     })
     .catch(error => {res.send(error)})
@@ -65,7 +66,11 @@ exports.followUser = (req, res) => {
     res.send( )//avoids 404's
 }
 
+exports.getProfile = (req,res) =>{
 
+    res.redirect('/myProfile')
+
+};
 exports.getMyProfile = (req,res) =>{
 
 
@@ -75,9 +80,7 @@ exports.getMyProfile = (req,res) =>{
         myId = req.cookies.id;
     }
     User.findById(myId).exec().then(function(doc){
-        res.cookie('id',myId);
 
-        res.cookie('email',doc.email)
         res.render("users/show",{layout: 'layout',usr:doc} );
     });
 
@@ -178,10 +181,12 @@ exports.authenticate = (req, res, next) => {
     })
         .then(user => {
             if (user && user.password === req.body.password){
-            res.locals.redirect = `/users/${user._id}`;
+
             req.flash("success", `${user.name}'s logged in successfully!`);
             res.locals.user = user;
+            res.cookie('id',user._id)
             res.cookie('email',req.body.email)
+            res.locals.redirect = `/users/${user._id}`;
             next();
         } else {
         req.flash("error", "Your account or password is incorrect.Please try again or contact your system administrator!");

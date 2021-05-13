@@ -3,22 +3,20 @@
     <div class=" col-lg-7" id = "feedApp" :key="pid">
         <div class="col-sm-1"></div>
         <div class="feed">
-            <div  class="card mb-3">
-                <div class="row no-gutters">
+            <div  class="card inpost mb-3">
+                    <div  class="row no-gutters card-body justify-content-center">
+                        <div class="input-group input-group-lg align-items-md-center">
 
-
-                        <div class="col-md-8 card-body">
-
-                                <input v-model="posttitle" placeholder="Post Title" type="text" id="postTitle" name="postTitle">
-
-                                <input  v-model="postcontent" placeholder="Post Content" type="text" id="postContent" name="postContent">
-
-                                <input v-model="posttags" placeholder="Tags" type="text" id = "postTags" name="postTags">
-                                <button v-on:click="submitPost" class ="postbutton col-md-6">Post</button>
-
+                                <input v-model="posttitle"  class="form-control intitle" placeholder="Post Title" type="text" id="postTitle"   name="postTitle">
                         </div>
+                        <div class="input-group input-group-lg align-items-md-center">
+                            <textarea   v-model="postcontent" class="form-control incontent" placeholder="Post Content" type="text" id="postContent" name="postContent"></textarea>
+                        </div>
+                        <div class="input-group input-group-lg align-items-md-center">
+                            <input v-model="posttags" class="form-control" placeholder="Tags" type="text" id = "postTags" name="postTags">
 
-
+                                <button v-on:click="submitPost" class ="postbutton">Post</button>
+                        </div>
                 </div>
             </div>
             <template >
@@ -30,11 +28,6 @@
                                 <p class="post_title">{{post.post_title}}</p>
                                 <p class="post_author">{{post.post_author}}</p>
                                 <p class="post_content">{{post.post_content}}</p>
-
-
-
-
-
                         </div>
                         <div class="post_footer">
 

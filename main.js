@@ -71,7 +71,7 @@ app.use(
 app.use(express.json());
 app.post("/", homecontroller.showIndex);
 app.get("/users", usersController.getAllUsers);
-app.get("/users/:id", usersController.getMyProfile);
+app.get("/users/:id", usersController.getProfile);
 
 app.put("/follow", usersController.followUser)
 

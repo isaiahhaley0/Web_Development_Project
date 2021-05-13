@@ -16,7 +16,7 @@ var currUser = new Vue({
                     .split('=')[1];
                 var email =  decodeURIComponent(temp);
                 const data ={"email":email};
-                etch('http://localhost:3000/editProfile', {
+                fetch('http://localhost:3000/editProfile', {
                     method: 'PUT', // or 'PUT'
                     headers: {
                         'Content-Type': 'application/json',

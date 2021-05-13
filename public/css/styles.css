@@ -154,15 +154,40 @@ ul {
   }
   #postbutton{
     background-color: lightblue;
+
     color:black;
     border-radius: 25%;
   }
+  .inpost{
+      position: relative;
+      width: inherit;
+      align-content: center;
+  }
   .intitle{
     position: relative;
-    border:0px;
-    margin-left: 35%;
+      width: 100%;
+      align-content: center;
+      text-align: center;
     border-bottom: 1px solid blue;
+      background: transparent;
   }
+input[type=text] {
+    background-color: transparent;
+    color: white;
+}
+textarea[type=text] {
+    background-color: transparent;
+    color: white;
+}
+
+.incontent{
+    position: relative;
+    width: 100%;
+    align-content: center;
+    text-align: center;
+    border-bottom: 1px solid blue;
+    background: transparent;
+}
   li a {
     display: block;
     color: black;
@@ -209,6 +234,7 @@ ul {
 .postbutton{
     background-image: radial-gradient(  #ed4b4b ,#f2b157, #75d24b, #4b97d8,  #a75fc2);
     padding: 5px;
+    width: 100%;
     border-radius: 10px;
     align-content: center;
 
@@ -249,7 +275,7 @@ ul {
   margin-right: 0%;
 }
 .post_title{
-    font-size: 16px;
+    font-size: 32px;
     font-family: sans-serif;
     background-color: transparent;
     width: inherit;
