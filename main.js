@@ -79,6 +79,7 @@ app.delete("/follow", usersController.unfollowUser)
 app.get("/signup", usersController.getUsersPage);
 app.post("/signup", usersController.validate);
 app.get("/login",usersController.login);
+app.get("/logout",usersController.logout);
 app.post("/login", usersController.authenticate, usersController.redirectView);
 app.get("/security", usersController.getSecurityPage);
 app.get("/search", homecontroller.showSearchPage);

@@ -195,7 +195,12 @@ exports.create = (req, res, next) => {
 exports.login = (req, res) => {
     res.render("login");
 };
-  
+exports.logout = (req, res) => {
+    res.cookie('id','')
+    res.cookie('email','')
+
+    res.render("login");
+};
 exports.authenticate = (req, res, next) => {
     User.findOne({
         email: req.body.email
