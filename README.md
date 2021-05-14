@@ -20,7 +20,7 @@ https://ucdenver.zoom.us/rec/share/AK1jmMuJRsKp_9AZp0tYVFduUQo0BuHyDgnUU4y5vkqk7
   
 Passcode: ?VB?Sa78 
 
-This link above contains the required video overview done by both partners, doing a brief overview of implementation that was done on each end and walking you through the Vibez Web Application project that has been completed for the Spring 2021 semester.
+This link above contains the required video overview done by both partners, doing a brief overview of implementation that was done on each end and walking you through the Vibez Web Application project that has been completed for the Spring 2021 semester. This Zoom Recording was done securely, recorded to the cloud and you will need the password mentioned above to be able to securely watch the project overview.
 
 
 ## Design Choices:
