@@ -15,7 +15,9 @@
 
 ## Zoom Link for Project Overview:
 ---
-https://ucdenver.zoom.us/rec/share/AK1jmMuJRsKp_9AZp0tYVFduUQo0BuHyDgnUU4y5vkqk7qkqkLWWJu1uB6Gty7nB.GXCYmRzYcZ1turym 
+https://ucdenver.zoom.us/rec/share/AK1jmMuJRsKp_9AZp0tYVFduUQo0BuHyDgnUU4y5vkqk7qkqkLWWJu1uB6Gty7nB.GXCYmRzYcZ1turym
+  
+  
 Passcode: ?VB?Sa78 
 
 This link above contains the required video overview done by both partners, doing a brief overview of implementation that was done on each end and walking you through the Vibez Web Application project that has been completed for the Spring 2021 semester.
@@ -66,6 +68,8 @@ That is, first, run 'npm install' to install required dependencies, then 'node s
 Our Web Application 'Vibez' has been deployed using Heroku as described in class and is connected to use either the cloud Mongo instance or a local Mongo as well for data storage 
 
 Link: https://goodvibez.herokuapp.com/
+  
+  
 SSL/TLS was not yet implemented, but would be done in the future to protext against security vulnerabilities.
 
 ## HTML Checker Status
